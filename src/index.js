@@ -6,11 +6,17 @@ import reportWebVitals from "./reportWebVitals";
 import "swiper/less";
 import "swiper/less/navigation";
 import "swiper/less/pagination";
+import { ToastContainer } from 'react-toastify';
+import AuthProvider from "./Components/AuthProvider/AuthProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+<AuthProvider>
 <App/>
+<ToastContainer />
+</AuthProvider>
+
   </React.StrictMode>
 );
 

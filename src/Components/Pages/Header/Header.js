@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {UserContext} from "../../AuthProvider/AuthProvider";
+import {useContext} from 'react'
 
 const Header = () => {
+  const{user} = useContext(UserContext);
+
   return (
 <div className="bg-black text-white">
 <div className="navbar flex justify-between px-8">
@@ -53,7 +57,7 @@ const Header = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black text-white rounded-box w-52"
           >
             <li>
               <Link to="/" className="justify-between">
@@ -62,10 +66,10 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/">Settings</Link>
+              <Link to="/register">Register</Link>
             </li>
             <li>
-              <Link to="/">Logout</Link>
+              <Link to="/login">Login</Link>
             </li>
           </ul>
         </div>

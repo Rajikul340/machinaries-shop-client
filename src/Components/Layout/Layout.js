@@ -11,7 +11,9 @@ const Layout = () => {
         <div className='px-8'>
         <Outlet></Outlet>
         </div>
-        <Footer></Footer>
+     <div className=''>
+     <Footer></Footer>
+     </div>
         </>
     );
 };
