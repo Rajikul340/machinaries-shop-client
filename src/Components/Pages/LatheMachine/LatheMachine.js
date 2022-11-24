@@ -1,23 +1,9 @@
-import { useLathe } from "../../Auth/Auth";
-import {useState} from 'react';
-import LatheMachineCard from "./LatheMachineCard";
+import React from 'react';
 
 const LatheMachine = () => {
-const[latheData, setLatheData] = useState([])
-    useLathe()
-    .then(data=>{
-        console.log(data);
-        setLatheData(data)
-    })
     return (
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-3 mt-8 ">
-            {
-                latheData.map(latheSingleData=>
-                <LatheMachineCard
-                key={latheSingleData._id}
-                latheSingleData={latheSingleData}
-                ></LatheMachineCard>)
-            }
+        <div>
+            <h1>this is lathe machine </h1>
         </div>
     );
 };

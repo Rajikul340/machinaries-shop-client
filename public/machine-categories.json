@@ -1,0 +1,15 @@
+[
+    {
+      "category_id": "01",
+      "name": "lathe machine"
+    },
+    {
+      "category_id": "02",
+      "name": "cnc machine"
+    },
+    {
+      "category_id": "03",
+      "name": "milling machine"
+    }
+    
+  ]

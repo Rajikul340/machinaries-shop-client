@@ -1,0 +1,115 @@
+
+  [
+    {
+        "title":"Amada Lathe",
+        "category_id": "01",
+        "Original-price":"$3000",
+        "Resale-price":"1900",
+        "uses":"7 years",
+        "sellar":"rabiul kabir",
+        "location":"banani, Dhaka",
+         "date":"24-11-22",
+        "img":"https://i.ibb.co/pd7Hf5v/Amada.jpg",
+        "desc":"is a large Japanese manufacturer of metal processing equipment & machinery based in Kanagawa. The company is headed by Mitsuo Okamoto. The company manufactures metal cutting, forming, shearing, and punching machines."
+
+    },
+    {
+        "title":"DMTG Lathe",
+        "category_id": "01",
+        "Original-price":"$3000",
+        "Resale-price":"1900",
+        "uses":"7 years",
+        "sellar":"rabiul kabir",
+        "location":"banani, Dhaka",
+        "date":"24-11-22",
+        "img":"https://i.ibb.co/br166P2/DMTG-lathe.jpg",
+        "desc":"The Guideway is one of the important elements of machine tool. The main function of the guideway is to make sure that the cutting tool or machine tool operative element moves along predetermined path. The machine tool operative element carries workpiece along with it."
+    
+
+    },
+    {
+        "title":"EMAG Lathe",
+        "category_id": "01",
+        "Original-price":"$3000",
+        "Resale-price":"1900",
+        "uses":"7 years",
+        "sellar":"rabiul kabir",
+        "location":"banani, Dhaka",
+        "date":"24-11-22",
+        "img":"https://i.ibb.co/gj5jNVN/EMAGlathe.jpg"
+    },
+    {
+        "title":"DMG-MOR CNC ",
+        "category_id": "02",
+        "Original-price":"$3000",
+        "Resale-price":"1900",
+        "uses":"7 years",
+        "sellar":"rabiul kabir",
+        "location":"banani, Dhaka",
+        "date":"24-11-22",
+        "img":"https://i.ibb.co/px4KJMs/DMG-MOR-cnc.png"
+      
+    },
+    {
+        "title":"Hardinge  CNC ",
+        "category_id": "02",
+        "Original-price":"$3000",
+        "Resale-price":"1900",
+        "uses":"7 years",
+        "sellar":"rabiul kabir",
+        "location":"banani, Dhaka",
+        "date":"24-11-22",
+        "img":"https://i.ibb.co/cL8NxLg/Hardinge-cnc.jpg"
+  
+    },
+    {
+        "title":"Yamazaki-Mazak  CNC ",
+        "category_id": "02",
+        "Original-price":"$3000",
+        "Resale-price":"1900",
+        "uses":"7 years",
+        "sellar":"rabiul kabir",
+        "location":"banani, Dhaka",
+        "date":"24-11-22",
+        "img":"https://i.ibb.co/f9bzhs2/Yamazaki-Mazak-expands-production-of-UK-made-machines-cnd.jpg"
+    },
+    {
+        "title":"Mac-Power-Industries-SS-Milling-Machine ",
+        "category_id": "03",
+        "Original-price":"$3000",
+        "Resale-price":"1900",
+        "uses":"7 years",
+        "sellar":"rabiul kabir",
+        "location":"banani, Dhaka",
+        "date":"24-11-22",
+        "img":"https://i.ibb.co/BGQ5f1W/Mac-Power-Industries-SS-Milling-Machine.jpg"
+
+   
+    },
+    {
+        "title":"PRECICUT-Conventional-M1tr-Milling-Machines ",
+        "category_id": "03",
+        "Original-price":"$3000",
+        "Resale-price":"1900",
+        "uses":"7 years",
+        "sellar":"rabiul kabir",
+        "location":"banani, Dhaka",
+        "date":"24-11-22",
+        "img":"https://i.ibb.co/LN8QQWv/PRECICUT-Conventional-M1tr-Milling-Machines2.jpg"
+
+
+    },
+    {
+        "title":"Yamazaki-Mazak  CNC ",
+        "category_id": "03",
+        "Original-price":"$3000",
+        "Resale-price":"1900",
+        "uses":"7 years",
+        "sellar":"rabiul kabir",
+        "location":"banani, Dhaka",
+        "date":"24-11-22",
+        "img":"https://i.ibb.co/6ZNfNYG/PRECICUT-Conventional-M1tr-Milling-Machines1.jpg"
+
+    }
+
+  ]

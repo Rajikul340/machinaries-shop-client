@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MachineCategory from '../Machine_Category/MachineCategory';
 
-const SideBar = () => {
+const SideBar = ({category}) => {
+console.log(category);
 
 
     return (
@@ -10,15 +12,8 @@ const SideBar = () => {
                <hr />
 
                <ul className='my-2'>
-                <li>
-                    <Link to='/lathemachine' className='lg:text-lg  font-serif '>Lathe Machine</Link>
-                </li>
-                <li>
-                    <Link to='/' className='lg:text-lg  font-serif '>Miling Machine</Link>
-                </li>
-                <li>
-                    <Link to='/' className='lg:text-lg font-serif '>CNC Machine</Link>
-                </li>
+                <MachineCategory></MachineCategory>
+               
                </ul>
             
         </div>
