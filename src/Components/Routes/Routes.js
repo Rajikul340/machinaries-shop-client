@@ -1,12 +1,12 @@
 import {createBrowserRouter} from 'react-router-dom';
 import Layout from '../Layout/Layout';
+import AllMachine from '../Pages/AllMachine/AllMachine';
 import Category from '../Pages/Category/Category';
 import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import Home from '../Pages/Home/Home'
-import LatheMachine from '../Pages/LatheMachine/LatheMachine';
 import Login from '../Pages/Login/Login';
-import MachineCategory from '../Pages/Machine_Category/MachineCategory';
 import Register from '../Pages/Register/Register';
+import PrivetRoute from './PrivateRout';
 
 
 export const router = createBrowserRouter([
@@ -28,8 +28,14 @@ export const router = createBrowserRouter([
                 element:<Register></Register>
             },
             {
+                path:"/AllMachine/:id",
+                element:<AllMachine></AllMachine>,
+                loader:({params}) => fetch (`http://localhost:5000/AllMachine/${params.id}`)
+
+            },
+            {
                 path:"/machine-category/:id",
-                element:<Category></Category>,
+                element:<PrivetRoute><Category></Category></PrivetRoute>,
                 loader: ({params}) =>{
                     return fetch( `http://localhost:5000/machine_category/${params.id}`)
                  }

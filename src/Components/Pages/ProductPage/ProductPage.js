@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ProductPage = ({singleData}) => {
+    
     console.log(singleData);
     return (
         <div>
