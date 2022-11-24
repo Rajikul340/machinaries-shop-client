@@ -6,14 +6,14 @@ const AboutProducts = () => {
     <div>
       <div className="hero ">
         <div className="hero-content flex-col lg:flex-row">
-         <div className="w-1/2 ">
+         <div className="lg:w-1/2 ">
          <img
             src={img}
             className="max-w-sm rounded-lg shadow-2xl " alt=""
           />
          </div>
 
-          <div className="w-1/2">
+          <div className="lg:w-1/2">
             <p className="text-orange-300">About</p>
             <h1 className="lg:text-5xl font-bold">Our Product</h1>
             <p className="py-6 text-lg text-justify">

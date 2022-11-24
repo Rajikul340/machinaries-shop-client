@@ -74,7 +74,7 @@ const Login = () => {
   return (
     <div>
       {error ? <p className="text-center text-red-600">{error}</p> : content}
-      <div className="mx-auto lg:w-5/12 mb-4 border">
+      <div className="mx-auto lg:w-5/12 mb-4 border mt-7">
         <h3 className="text-center lg:text-3xl font-bold capitalize">
           Please LogIn
         </h3>
@@ -86,7 +86,7 @@ const Login = () => {
             type="email"
             name="email"
             placeholder="email"
-            className="border p-3 rounded-md w-5/6"
+            className="border border-orange-300 p-3 rounded-md w-full"
           />
           <br />
           <label htmlFor="name">password</label>
@@ -95,16 +95,18 @@ const Login = () => {
             type="password"
             name="password"
             placeholder="password"
-            className="border p-3 rounded-md w-5/6"
+            className="border border-orange-300 p-3 rounded-md w-full"
           />
           <br />
 
-          <button
+        <div className="form-control ">
+        <button
             type="submit"
-            className=" btn btn-outline btn-primary w-64 lg:ml-20 mt-5"
+            className=" btn btn-outline border-orange-300 hover:bg-orange-300 hover:border-0 font-bold  mt-5"
           >
             Login
           </button>
+        </div>
 
           <div className="text-center mt-5">
             <p className="text-center">
@@ -115,18 +117,14 @@ const Login = () => {
             </p>
           </div>
 
-          <div className=" my-3 w-80  ">
+          <div className=" form-control my-3 text-center  ">
             <button
               onClick={googleLoginBtn}
-              className="flex gap-12 align-middle lg:ml-20 border border-blue-700 rounded-xl"
+              className=" border border-orange-300 hover:bg-orange-300 hover:text-white rounded-lg py-2"
             >
-              <img
              
-                className="lg:w-14 w-6 border rounded-box "
-                alt=""
-              />
-              <p className="font-bold lg:text-xl capitalize mr-2 lg:mt-1">
-                {" "}
+              <p className="font-bold  uppercase mr-2 lg:mt-1">
+               
                 Continue with Google
               </p>
             </button>
