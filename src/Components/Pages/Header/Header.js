@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="navbar bg-black text-white">
-      <div className="flex-1">
-        <Link to="/" className='uppercase text-2xl font-semibold'>
+<div className="bg-black text-white">
+<div className="navbar flex justify-between px-8">
+      <div className="">
+        <Link to="/" className='uppercase lg:text-2xl font-bold font-serif'>
           {" "}
           Machinaries Shop
         </Link>
@@ -70,6 +71,7 @@ const Header = () => {
         </div>
       </div>
     </div>
+</div>
   );
 };
 
