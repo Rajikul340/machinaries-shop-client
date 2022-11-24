@@ -8,7 +8,7 @@ const Layout = () => {
     return (
         <>
          <Header></Header>
-        <div className='px-8'>
+        <div className='px-8 min-h-screen'>
         <Outlet></Outlet>
         </div>
      <div className=''>

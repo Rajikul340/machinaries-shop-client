@@ -4,7 +4,13 @@ import {UserContext} from "../../AuthProvider/AuthProvider";
 import {useContext} from 'react'
 
 const Header = () => {
-  const{user} = useContext(UserContext);
+  const{user, logOut} = useContext(UserContext);
+
+  const handleLogOut = ()=>{
+    logOut()
+    .then()
+    .catch()
+  }
 
   return (
 <div className="bg-black text-white">
@@ -15,7 +21,10 @@ const Header = () => {
           Machinaries Shop
         </Link>
       </div>
-      <div className="flex-none">
+     {
+      user?.email ?
+      <>
+       <div className="flex-none">
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <div className="indicator">
@@ -52,7 +61,7 @@ const Header = () => {
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img src="https://placeimg.com/80/80/people" alt="" />
+              <img src={user?.photoURL ?  user?.photoURL : ''}referrerPolicy='referrerPolicy' alt="" />
             </div>
           </label>
           <ul
@@ -60,20 +69,32 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black text-white rounded-box w-52"
           >
             <li>
-              <Link to="/" className="justify-between">
+              <Link to="/login" className="justify-between">
                 Profile
                 <span className="badge">New</span>
               </Link>
             </li>
+
             <li>
-              <Link to="/register">Register</Link>
+              <Link to="/dashboard">Dashboard</Link>
             </li>
+
             <li>
-              <Link to="/login">Login</Link>
+             <button className='border-0' onClick={handleLogOut}>signout</button>
             </li>
+            
           </ul>
         </div>
       </div>
+      </>
+      :
+       <>
+      <div className="flex gap-2">
+      <Link to='/register'>Register</Link>
+        <Link to='/login'>Login</Link>
+      </div>
+      </>
+     }
     </div>
 </div>
   );

@@ -7,6 +7,7 @@ import "swiper/less";
 import "swiper/less/navigation";
 import "swiper/less/pagination";
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import AuthProvider from "./Components/AuthProvider/AuthProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

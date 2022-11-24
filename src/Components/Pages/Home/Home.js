@@ -11,7 +11,7 @@ const Home = () => {
         <SideBar></SideBar>
        <div>
           <AdvertiseItem></AdvertiseItem>
-          {/* <Banner className="ml-10"></Banner> */}
+          <Banner className="ml-10"></Banner>
           <AboutProducts></AboutProducts>
 
         </div>

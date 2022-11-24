@@ -4,7 +4,7 @@ import img from '../../../image/homes-2.jpg'
 const AboutProducts = () => {
   return (
     <div>
-      <div className="hero ">
+      <div className="hero mt-3">
         <div className="hero-content flex-col lg:flex-row">
          <div className="lg:w-1/2 ">
          <img
