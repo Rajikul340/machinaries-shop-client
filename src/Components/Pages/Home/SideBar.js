@@ -11,13 +11,13 @@ const SideBar = () => {
 
                <ul className='my-2'>
                 <li>
-                    <Link to='/' className='lg:text-lg  font-serif text-[13px]'>Lathe Machine</Link>
+                    <Link to='/' className='lg:text-lg  font-serif '>Lathe Machine</Link>
                 </li>
                 <li>
-                    <Link to='/' className='lg:text-lg  font-serif text-[13px]'>Miling Machine</Link>
+                    <Link to='/' className='lg:text-lg  font-serif '>Miling Machine</Link>
                 </li>
                 <li>
-                    <Link to='/' className='lg:text-lg font-serif text-[13px] '>CNC Machine</Link>
+                    <Link to='/' className='lg:text-lg font-serif '>CNC Machine</Link>
                 </li>
                </ul>
             

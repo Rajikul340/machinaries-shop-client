@@ -1,7 +1,7 @@
 import React from "react";
-import banner1 from "../../../image/home2.jpg";
-import banner2 from "../../../image/home3.jpg";
-import banner3 from "../../../image/home4.jpg";
+import banner1 from "../../../image/homes-1.jpg";
+import banner2 from "../../../image/homes-2.jpg";
+import banner3 from "../../../image/homes-3.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, EffectFade, Autoplay } from "swiper";
 import "swiper/css";
