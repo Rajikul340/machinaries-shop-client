@@ -1,31 +1,26 @@
+
 [
-    
-
-
-
     {
-        "title":"Mac-Power-Industries-SS-Milling-Machine ",
+        "title":"DMG-MOR CNC ",
         "Original-price":"$3000",
         "Resale-price":"1900",
         "uses":"7 years",
         "sellar":"rabiul kabir",
         "location":"banani, Dhaka",
         "date":"24-11-22",
-        "img":"https://i.ibb.co/BGQ5f1W/Mac-Power-Industries-SS-Milling-Machine.jpg"
-
-   
+        "img":"https://i.ibb.co/px4KJMs/DMG-MOR-cnc.png"
+      
     },
     {
-        "title":"PRECICUT-Conventional-M1tr-Milling-Machines ",
+        "title":"Hardinge  CNC ",
         "Original-price":"$3000",
         "Resale-price":"1900",
         "uses":"7 years",
         "sellar":"rabiul kabir",
         "location":"banani, Dhaka",
         "date":"24-11-22",
-        "img":"https://i.ibb.co/LN8QQWv/PRECICUT-Conventional-M1tr-Milling-Machines2.jpg"
-
-
+        "img":"https://i.ibb.co/cL8NxLg/Hardinge-cnc.jpg"
+  
     },
     {
         "title":"Yamazaki-Mazak  CNC ",
@@ -35,8 +30,6 @@
         "sellar":"rabiul kabir",
         "location":"banani, Dhaka",
         "date":"24-11-22",
-        "img":"https://i.ibb.co/6ZNfNYG/PRECICUT-Conventional-M1tr-Milling-Machines1.jpg"
-
+        "img":"https://i.ibb.co/f9bzhs2/Yamazaki-Mazak-expands-production-of-UK-made-machines-cnd.jpg"
     }
-    
 ]

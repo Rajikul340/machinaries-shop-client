@@ -1,42 +1,35 @@
 [
+    {
+        "title":"Amada Lathe",
+        "Original-price":"$3000",
+        "Resale-price":"1900",
+        "uses":"7 years",
+        "sellar":"rabiul kabir",
+        "location":"banani, Dhaka",
+         "date":"24-11-22",
+        "img":"https://i.ibb.co/pd7Hf5v/Amada.jpg"
+
+    },
+    {
+        "title":"DMTG Lathe",
+        "Original-price":"$3000",
+        "Resale-price":"1900",
+        "uses":"7 years",
+        "sellar":"rabiul kabir",
+        "location":"banani, Dhaka",
+        "date":"24-11-22",
+        "img":"https://i.ibb.co/br166P2/DMTG-lathe.jpg"
     
 
-
-
-    {
-        "title":"Mac-Power-Industries-SS-Milling-Machine ",
-        "Original-price":"$3000",
-        "Resale-price":"1900",
-        "uses":"7 years",
-        "sellar":"rabiul kabir",
-        "location":"banani, Dhaka",
-        "date":"24-11-22",
-        "img":"https://i.ibb.co/BGQ5f1W/Mac-Power-Industries-SS-Milling-Machine.jpg"
-
-   
     },
     {
-        "title":"PRECICUT-Conventional-M1tr-Milling-Machines ",
+        "title":"EMAG Lathe",
         "Original-price":"$3000",
         "Resale-price":"1900",
         "uses":"7 years",
         "sellar":"rabiul kabir",
         "location":"banani, Dhaka",
         "date":"24-11-22",
-        "img":"https://i.ibb.co/LN8QQWv/PRECICUT-Conventional-M1tr-Milling-Machines2.jpg"
-
-
-    },
-    {
-        "title":"Yamazaki-Mazak  CNC ",
-        "Original-price":"$3000",
-        "Resale-price":"1900",
-        "uses":"7 years",
-        "sellar":"rabiul kabir",
-        "location":"banani, Dhaka",
-        "date":"24-11-22",
-        "img":"https://i.ibb.co/6ZNfNYG/PRECICUT-Conventional-M1tr-Milling-Machines1.jpg"
-
+        "img":"https://i.ibb.co/gj5jNVN/EMAGlathe.jpg"
     }
-    
 ]

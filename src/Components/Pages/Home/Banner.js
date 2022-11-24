@@ -24,8 +24,8 @@ const Banner = () => {
               The Most Reusable machine you buy inexpensive. <br />
               so do not time west. let`s buy your unexpected product
             </p>
-            <div>
-              <button className="btn sm:pb-3 bg-[#F7C02D] hover:btn-outline hover:text-[#F7C02D] ">
+            <div className=" flex">
+              <button className="btn sm:pb-3 bg-[#F7C02D] hover:btn-outline hover:text-[#F7C02D] mr-4  ">
                 Reade More
               </button>
               <button className="btn bg-white text-black hover:text-white">

@@ -11,7 +11,7 @@ const SideBar = () => {
 
                <ul className='my-2'>
                 <li>
-                    <Link to='/' className='lg:text-lg  font-serif '>Lathe Machine</Link>
+                    <Link to='/lathemachine' className='lg:text-lg  font-serif '>Lathe Machine</Link>
                 </li>
                 <li>
                     <Link to='/' className='lg:text-lg  font-serif '>Miling Machine</Link>
