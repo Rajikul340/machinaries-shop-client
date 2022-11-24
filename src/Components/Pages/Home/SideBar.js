@@ -5,19 +5,19 @@ const SideBar = () => {
 
 
     return (
-        <div className='w-2/3  '>
+        <div className=' w-2/3  '>
             <h2 className='lg:text-2xl font-bold py-2 font-serif'>Categories</h2>
                <hr />
 
                <ul className='my-2'>
                 <li>
-                    <Link to='/' className='lg:text-lg font-semibold font-serif '>Lathe Machine</Link>
+                    <Link to='/' className='lg:text-lg  font-serif text-[13px]'>Lathe Machine</Link>
                 </li>
                 <li>
-                    <Link to='/' className='lg:text-lg font-semibold font-serif '>Miling Machine</Link>
+                    <Link to='/' className='lg:text-lg  font-serif text-[13px]'>Miling Machine</Link>
                 </li>
                 <li>
-                    <Link to='/' className='lg:text-lg font-semibold font-serif '>CNC Machine</Link>
+                    <Link to='/' className='lg:text-lg font-serif text-[13px] '>CNC Machine</Link>
                 </li>
                </ul>
             
