@@ -30,7 +30,7 @@ const DashboardLayout = () => {
        
           <DashobarSideBar role={role} />
 
-          <div className=" lg:ml-64 ">
+          <div className="flex-1 m-5 ">
             <Outlet></Outlet>
           </div>
         </>

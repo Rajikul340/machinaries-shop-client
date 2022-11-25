@@ -5,6 +5,7 @@ import { UserContext } from "../../AuthProvider/AuthProvider";
 import AdminMenu from "../AdminMenu/AdminMenu";
 import BuyerMenu from "../BuyerMenu/BuyerMenu";
 import SellerMenu from "../SellerMenu/SellerMenu";
+import { Bars3Icon } from '@heroicons/react/24/solid'
 
 const DashobarSideBar = ({ role }) => {
   console.log(role);
@@ -30,17 +31,20 @@ const DashobarSideBar = ({ role }) => {
           onClick={handleToggle}
           className="mobile-menu-button  p-4 focus:outline-none focus:bg-gray-700"
         >
-          {/* <Bars3Icon className='h-5 w-5' /> */}
-          do
+          <Bars3Icon className='h-5 w-5' />
+        
         </button>
       </div>
       {/* Sidebar */}
       <div
-        className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden  bg-orange-100 w-64 space-y-6 px-2 py-4 absolute inset-y-0 lg:right-0 transform ${
+        className={`z-10 md:fixed flex flex-col justify-between overflow-y-hidden w-64 bg-zinc-300  space-y-6 px-2 py-4 absolute inset-y-0 lg:right-0 transform ${
           isActive && "-translate-x-full"
         }  md:translate-x-0  transition duration-200 ease-in-out`}
       >
-        <div>
+      <div>
+
+   
+   
           {/* Branding & Profile Info */}
           <div>
             <div className="flex flex-col items-center mt-6 -mx-2">
