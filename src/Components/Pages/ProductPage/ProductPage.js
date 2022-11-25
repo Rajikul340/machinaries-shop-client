@@ -1,11 +1,13 @@
-import React from 'react';
 
-const ProductPage = ({singleData}) => {
-    
-    console.log(singleData);
+import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+
+const ProductPage = () => {
+const {data} = useLoaderData();
+    console.log(data);
     return (
         <div>
-            <h1>this is product is </h1>
+            
         </div>
     );
 };

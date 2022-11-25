@@ -1,22 +1,32 @@
-import React from "react";
+import {useState} from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import ProductPage from "../ProductPage/ProductPage";
 
-const SingleCard = ({ MahcineData }) => {
-  console.log(MahcineData);
-  const { img } = MahcineData;
+const SingleCard = ({ machinData }) => {
+    console.log(machinData);
+
+   
+  const { img, title, _id, location,  } = machinData;
+
+
+
   return (
     <div>
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure>
-          <img src={img} className='w-96' alt="Shoes" />
+          <img src={img} className='h-64 w-5/6 ' alt="Shoes" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <h2 className="card-title">{title}</h2>
+       <div>
+         <p></p>
+       </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+          <button className="btn btn-primary">See Details</button>
           </div>
         </div>
       </div>
+   
     </div>
   );
 };

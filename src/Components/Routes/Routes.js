@@ -5,6 +5,7 @@ import Category from '../Pages/Category/Category';
 import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import Home from '../Pages/Home/Home'
 import Login from '../Pages/Login/Login';
+import ProductPage from '../Pages/ProductPage/ProductPage';
 import Register from '../Pages/Register/Register';
 import PrivetRoute from './PrivateRout';
 
@@ -33,13 +34,7 @@ export const router = createBrowserRouter([
                 loader:({params}) => fetch (`http://localhost:5000/AllMachine/${params.id}`)
 
             },
-            {
-                path:"/machine-category/:id",
-                element:<PrivetRoute><Category></Category></PrivetRoute>,
-                loader: ({params}) =>{
-                    return fetch( `http://localhost:5000/machine_category/${params.id}`)
-                 }
-            }
+
         ]
     }
 ])
