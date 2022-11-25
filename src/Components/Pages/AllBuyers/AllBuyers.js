@@ -4,22 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import BuyerDetails from "../BuyerDetails/BuyerDetails";
 
 const AllBuyers = () => {
-  //   const[buyer, setBuyer] = useState([]);
-  //   const [loading, setLoading] = useState(true);
 
-  // console.log("buyer",buyer);
-
-  //     useEffect(()=>{
-  //         setLoading(true)
-  //    fetch('http://localhost:5000/users')
-  //    .then(res=>res.json())
-  //    .then(data=>{
-  //     console.log(data);
-  //     setBuyer(setBuyer)
-  //     setLoading(false)
-  //    })
-
-  //     },[])
 
   const {
     data: buyerData = [],
