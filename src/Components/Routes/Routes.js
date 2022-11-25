@@ -4,6 +4,7 @@ import AllMachine from '../Pages/AllMachine/AllMachine';
 import Blogs from '../Pages/Blogs/Blogs';
 import BuyerOrder from '../Pages/BuyersOrder/BuyerOrder';
 import Category from '../Pages/Category/Category';
+import DashBoard from '../Pages/DashBoard/Dachboard';
 import DashboardLayout from '../Pages/DashBoard/DashboardLayout';
 import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import Home from '../Pages/Home/Home'
@@ -50,9 +51,13 @@ export const router = createBrowserRouter([
         errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
-                path:'/dashboard/myorder',
-                element:<BuyerOrder></BuyerOrder>
+                path:'/dashboard',
+                element:<DashBoard></DashBoard>
             },
+            {
+                path:"/dashboard/myorder",
+                element:<BuyerOrder></BuyerOrder>
+            }
 
         ]
     }

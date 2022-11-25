@@ -1,16 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 
-const DashobarSideBar = () => {
+const DashobarSideBar = ({role}) => {
+    console.log(role);
 
 
     return (
         <div>
              <h1>welcome </h1>
-           {/* <img src={user?.photoURL} className='w-16 rounded-full' alt="" />
-            <h3>{user?.displayName}</h3>
-             <p>{user?.email}</p> */}
+                 <Link to='/dashboard/myorder'>my orders</Link>
         </div>
     );
 };
