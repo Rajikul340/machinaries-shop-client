@@ -9,8 +9,11 @@ const Register = () => {
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  const [selectedValue, setSelectedValue] =useState("");
+  console.log(selectedValue);
 
   const handleSubmit = (event) => {
+    setSelectedValue(event.target.value);
     event.preventDefault();
     setLoader(true);
     const form = event.target;
@@ -19,6 +22,25 @@ const Register = () => {
     const photoURL = form.photoURL.value;
     const password = form.password.value;
     console.log(email, password, name, photoURL);
+
+    const userCollection ={
+              
+      name,
+      email,
+      img:photoURL,
+      role: selectedValue,
+ }
+  fetch('http://localhost:5000/users',{
+    method:"POST",
+    headers:{
+      'content-type' : 'application/json'
+    },
+    body: JSON.stringify(userCollection)
+  })
+  .then(res=>res.json())
+  .then(data=>{
+    console.log(data);
+  })
 
     createUser(email, password)
       .then((result) => {
@@ -35,21 +57,26 @@ const Register = () => {
         setError(errorMessage);
         console.log(err);
       });
+
+      const handelprofileUpdate = (name, photoURL) => {
+        const profile = {
+          displayName: name,
+          photoURL: photoURL,
+        };
+    
+        handleUpdate(profile)
+          .then((result) => {
+            const user = result?.user;
+            console.log('update user', user);
+           
+            
+            console.log(result);
+          })
+          .catch((err) => console.log(err));
+      };
   };
 
-  const handelprofileUpdate = (name, photoURL) => {
-    const profile = {
-      displayName: name,
-      photoURL: photoURL,
-    };
-
-    handleUpdate(profile)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-      })
-      .catch((err) => console.log(err));
-  };
+  
   const content = loader && <p>loading...</p>;
 
   return (
@@ -100,12 +127,31 @@ const Register = () => {
           />
           <br />
 
+          <input
+            checked={selectedValue === "seller"}
+            onChange={handleSubmit}
+            value="seller"
+            name="seller"
+            type="radio"
+          />
+          <label htmlFor=""><span className="p-2">Seller Account</span></label>
+
+          <input
+        
+            checked={selectedValue === "buyer"}
+            onChange={handleSubmit}
+            value="buyer"
+            name="buyer"
+            type="radio"
+          />
+          <label htmlFor=""> <span className="p-2">Buyer Account</span> </label>
+
           <div className="form-control ">
             <button
               type="submit"
               className=" btn btn-outline border-orange-300 hover:bg-orange-300 hover:border-0 font-bold  mt-5"
             >
-            Register
+              Register
             </button>
           </div>
 

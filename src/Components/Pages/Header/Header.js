@@ -21,7 +21,13 @@ const Header = () => {
           Machinaries Shop
         </Link>
       </div>
-     {
+     
+    <div>
+   
+   <div className="mr-3">
+   <Link className="text-lg text-orange-400 font-semibold font-serif " to='/blogs'>Blogs </Link>
+   </div>
+    {
       user?.email ?
       <>
        <div className="flex-none">
@@ -89,12 +95,18 @@ const Header = () => {
       </>
       :
        <>
-      <div className="flex gap-2">
-      <Link to='/register'>Register</Link>
-        <Link to='/login'>Login</Link>
+      <div className="flex gap-4">
+         
+        
+         
+        <Link className="text-lg text-orange-400 font-semibold font-serif" to='/register'>Registration </Link>
+        <Link className="text-lg text-orange-400 font-semibold font-serif" to='/login'>Login</Link>
       </div>
       </>
      }
+      
+    
+    </div>
     </div>
 </div>
   );

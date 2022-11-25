@@ -6,8 +6,12 @@ import { UserContext } from "../../AuthProvider/AuthProvider";
 
 
 const BookingModal = ({ booingData, setBookingData}) => {
-  const { title, resalePrice } = booingData;
-  const date = new Date();
+  const { title, resalePrice, img } = booingData;
+
+var now = new Date()
+var date = now.toLocaleDateString();
+  console.log(date)
+
   const { user } = useContext(UserContext);
 
   const handleBooking = (event) => {
@@ -15,17 +19,20 @@ const BookingModal = ({ booingData, setBookingData}) => {
     const form = event.target;
     const email = form.email.value;
     const phone = form.phone.value;
+    const location = form.location.value;
 
     const booking = {
       title,
       name:user?.displayName,
       date,
-      email,
+      buyerEmail: email,
       phone,
-      resalePrice
+      resalePrice,
+      location,
+      img
     };
 
-    fetch("https://doctors-portal-servar.vercel.app/bookings", {
+    fetch("http://localhost:5000/AllMachine", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -86,14 +93,21 @@ const BookingModal = ({ booingData, setBookingData}) => {
               readOnly
             />
             <input
+              type="text"
+              name="location"
+              className="input input-bordered w-full "
+              placeholder="meeting place"
+           
+            />
+            <input
               type="submit"
               value="Submit"
-              className="input input-bordered w-full btn btn-outline btn-info"
+              className="input input-bordered w-full btn btn-outline border-orange-300 hover:bg-orange-300"
             />
           </form>
 
           <div className="modal-action">
-            <label htmlFor="my-modal" className="btn btn-outline btn-info">
+            <label htmlFor="my-modal" className="btn btn-outline border-orange-300 hover:bg-orange-300">
               close
             </label>
           </div>
