@@ -10,10 +10,16 @@ const Register = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [selectedValue, setSelectedValue] =useState("");
-  console.log(selectedValue);
+
+
+
+  const handleRadioBtn = event =>{
+    setSelectedValue(event.target.value);
+    event.preventDefault();
+  }
 
   const handleSubmit = (event) => {
-    setSelectedValue(event.target.value);
+    
     event.preventDefault();
     setLoader(true);
     const form = event.target;
@@ -129,7 +135,7 @@ const Register = () => {
 
           <input
             checked={selectedValue === "seller"}
-            onChange={handleSubmit}
+            onChange={handleRadioBtn}
             value="seller"
             name="seller"
             type="radio"
@@ -139,7 +145,7 @@ const Register = () => {
           <input
         
             checked={selectedValue === "buyer"}
-            onChange={handleSubmit}
+            onChange={handleRadioBtn}
             value="buyer"
             name="buyer"
             type="radio"

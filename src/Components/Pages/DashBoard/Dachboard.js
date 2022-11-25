@@ -20,8 +20,6 @@ const DashBoard = () => {
     <div className='h-screen text-gray-700 flex flex-col justify-center items-center pb-16'>
       <div className='flex justify-center items-center'>
        <h1 className='lg:text-6xl capitalize font-serif font-bold text-orange-400'>welcome to</h1>
-     
-        
       </div>
       <div className='flex justify-center text-gray-500 items-center mt-4'>
         {!loading && role ? (
@@ -29,11 +27,11 @@ const DashBoard = () => {
             {role === 'admin' ? (
               <p className='text-3xl font-medium'>Admin Dashboard</p>
             ) : (
-              <p className='text-3xl font-medium'>Host Dashboard</p>
+              <p className='text-3xl font-medium'>Buyer Dashboard</p>
             )}
           </>
         ) : (
-          <p className='text-3xl font-medium'>User Dashboard</p>
+          <p className='text-3xl font-medium'>Seller Dashboard</p>
         )}
       </div>
     </div>
