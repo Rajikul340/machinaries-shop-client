@@ -4,25 +4,38 @@ import { useState, useContext } from "react";
 import ProductPage from "../ProductPage/ProductPage";
 import SingleCard from "../singleCard/SingleCard";
 import { UserContext } from "../../AuthProvider/AuthProvider";
+import BookingModal from "../BookingModal/BookingModal";
 
 const AllMachine = () => {
-  const { loading } = useContext(UserContext);
-
+  const { loader } = useContext(UserContext);
   const allMachineData = useLoaderData();
+ const [booingData, setBookingData] = useState([])
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
-      {loading ? (
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
+      {loader ? (
         <p>loading...</p>
       ) : (
         allMachineData.map((machinData) => (
           <SingleCard
             key={machinData?._id}
+            setBookingData={setBookingData}
             machinData={machinData}
           ></SingleCard>
+
         ))
       )}
-      <div></div>
+      <div>
+        {
+          booingData && (
+            <BookingModal
+             booingData={booingData}
+             setBookingData={setBookingData}
+            ></BookingModal>
+          )
+        }
+
+      </div>
     </div>
   );
 };

@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:"/AllMachine/:id",
-                element:<AllMachine></AllMachine>,
+                element:<PrivetRoute><AllMachine></AllMachine></PrivetRoute>,
                 loader:({params}) => fetch (`http://localhost:5000/AllMachine/${params.id}`)
 
             },
