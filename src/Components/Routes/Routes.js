@@ -1,5 +1,8 @@
 import {createBrowserRouter} from 'react-router-dom';
 import Layout from '../Layout/Layout';
+import AddProduct from '../Pages/AddProduct/AddProduct';
+import ManageProduct from '../Pages/AddProduct/ManageProduct';
+import AdminRequest from '../Pages/AdminRequest/AdminRequest';
 import AllBuyers from '../Pages/AllBuyers/AllBuyers';
 import AllMachine from '../Pages/AllMachine/AllMachine';
 import AllSeller from '../Pages/AllSeller/AllSeller';
@@ -73,6 +76,18 @@ export const router = createBrowserRouter([
                 path:"/dashboard/payment/:id",
                 element:<Payment></Payment>,
                 loader:({params}) => fetch(`http://localhost:5000/AllMachine/${params.id}`)
+            },
+            {
+                path:"/dashboard/AddProduct",
+                element:<AddProduct></AddProduct>
+            },
+            {
+                path:"/dashboard/adminRequest",
+                element:<AdminRequest></AdminRequest>
+            },
+            {
+                path:"/dashboard/manageProduct",
+                element:<ManageProduct></ManageProduct>
             }
 
         ]

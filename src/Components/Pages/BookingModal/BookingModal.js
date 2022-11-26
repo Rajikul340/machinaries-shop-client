@@ -9,8 +9,8 @@ const BookingModal = ({ bookingData, setBookingData}) => {
   console.log(bookingData);
   const { title, resalePrice, img, category_id } = bookingData;
 
-var now = new Date()
-var date = now.toLocaleDateString();
+const now = new Date()
+const date = now.toLocaleDateString();
   console.log(date)
 
   const { user } = useContext(UserContext);

@@ -5,13 +5,14 @@ import { UserContext } from '../../AuthProvider/AuthProvider'
 
 const DashBoard = () => {
   const { user } = useContext(UserContext)
-
+console.log(user);
   const [role, setRole] = useState(null)
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     getRole(user?.email)
     .then(data => {
       setRole(data)
+      console.log('dashobr role', data);
       setLoading(false)
     })
   }, [user])
@@ -22,7 +23,7 @@ const DashBoard = () => {
        <h1 className='lg:text-6xl capitalize font-serif font-bold text-orange-400'>welcome to</h1>
       </div>
       <div className='flex justify-center text-gray-500 items-center mt-4'>
-      {role && role !== "requested" ? (
+      {!loading && role !== "seller" ? (
                 <>{role === "admin" ?   <>
                 <h2 className="font-bold font-serif lg:text-2xl">Admin Dashboard</h2>
                 <hr />

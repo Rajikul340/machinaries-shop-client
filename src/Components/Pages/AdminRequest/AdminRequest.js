@@ -12,6 +12,7 @@ const AdminRequest = () => {
     getRole(user?.email)
     .then(data => {
       setRole(data)
+      console.log(data);
       setLoading(false)
     })
   }, [user])
