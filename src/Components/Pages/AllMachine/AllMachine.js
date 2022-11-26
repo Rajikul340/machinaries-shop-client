@@ -1,43 +1,55 @@
-import React from "react";
-import { useLoaderData } from "react-router-dom";
-import { useState, useContext } from "react";
-import ProductPage from "../ProductPage/ProductPage";
-import SingleCard from "../singleCard/SingleCard";
-import { UserContext } from "../../AuthProvider/AuthProvider";
-import BookingModal from "../BookingModal/BookingModal";
+// import React from "react";
+// import { useLoaderData } from "react-router-dom";
+// import { useQuery } from "@tanstack/react-query";
+// import { useState, useContext } from "react";
+// import SingleCard from "../singleCard/SingleCard";
+// import { UserContext } from "../../AuthProvider/AuthProvider";
+// import BookingModal from "../BookingModal/BookingModal";
 
-const AllMachine = () => {
-  const { loader } = useContext(UserContext);
-  const allMachineData = useLoaderData();
- const [bookingData, setBookingData] = useState([])
+// const AllMachine = () => {
+//   const { loading } = useContext(UserContext);
+//   const [bookingData, setBookingData] = useState([])
+  
+//   const {
+//     data: allMechineData = [],
+//     refetch,
+//     isLoading,
+//   } = useQuery({
+//     queryKey: [`AllMachine/:id`],
+//     queryFn: async ({params}) => {
+//       const res = await fetch(`http://localhost:5000/AllMachine/${params.id}`);
+//       const data = await res.json();
+//       return data;
+//     },
+//   });
 
-  return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
-      {loader ? (
-        <p>loading...</p>
-      ) : (
-        allMachineData.map((machinData) => (
-          <SingleCard
-            key={machinData?._id}
-            setBookingData={setBookingData}
-            machinData={machinData}
-          ></SingleCard>
+// console.log('allmachine dta',allMechineData);
 
-        ))
-      )}
-      <div>
-        {
-          bookingData && (
-            <BookingModal
-            bookingData={bookingData}
-             setBookingData={setBookingData}
-            ></BookingModal>
-          )
-        }
+//   return (
+//     <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
+//       {loading ? (
+//         <p>loading...</p>
+//       ) : 
+      
+//          allMechineData &&
 
-      </div>
-    </div>
-  );
-};
+//          allMechineData.map(machineData=><SingleCard
+//           machineData={machineData}
+//          ></SingleCard>)
+//       }
+//       <div>
+//         {
+//           bookingData && (
+//             <BookingModal
+//             bookingData={bookingData}
+//              setBookingData={setBookingData}
+//             ></BookingModal>
+//           )
+//         }
 
-export default AllMachine;
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default AllMachine;

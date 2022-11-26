@@ -43,9 +43,9 @@ export const router = createBrowserRouter([
                 element:<Blogs></Blogs>
             },
             {
-                path:"/AllMachine/:id",
-                element:<PrivetRoute><AllMachine></AllMachine></PrivetRoute>,
-                loader:({params}) => fetch (`http://localhost:5000/AllMachine/${params.id}`)
+                path:"/machine_category/:id",
+                element:<Category></Category>,
+                loader:({params}) => fetch(`http://localhost:5000/machine_category/${params.id}`)
 
             },
 

@@ -49,7 +49,7 @@ const DashobarSideBar = ({ role }) => {
           <div>
             <div className="flex flex-col items-center mt-6 -mx-2">
             <nav>
-              {role && role !== "seller" ? (
+              {role && role !== "requested" ? (
                 <>{role === "admin" ?   <>
                 <h2 className="font-bold font-serif lg:text-2xl">Admin Dashboard</h2>
                 <hr />
@@ -71,7 +71,7 @@ const DashobarSideBar = ({ role }) => {
           {/* Nav Items */}
           <div className="flex flex-col justify-between flex-1 mt-6">
             <nav>
-              {role && role !== "seller" ? (
+              {role && role !== "requested" ? (
                 <>{role === "admin" ? <AdminMenu /> : <BuyerMenu />}</>
               ) : (
                 <SellerMenu />

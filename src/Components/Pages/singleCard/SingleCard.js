@@ -3,8 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../AuthProvider/AuthProvider";
 import ProductPage from "../ProductPage/ProductPage";
 
-const SingleCard = ({ machinData, setBookingData }) => {
-  console.log(machinData);
+const SingleCard = ({ machineData, setBookingData }) => {
+  // console.log(machineData);
   const { user } = useContext(UserContext);
   console.log(user);
 
@@ -17,7 +17,7 @@ const SingleCard = ({ machinData, setBookingData }) => {
     seller,
     originalPrice,
     resalePrice,
-  } = machinData;
+  } = machineData;
 
   return (
     <div>
@@ -32,7 +32,7 @@ const SingleCard = ({ machinData, setBookingData }) => {
               Original Price: <strong>{originalPrice}</strong>
             </p>
             <p className="text-end">
-              Resalre Price: <strong>${resalePrice}</strong>
+              Resale Price: <strong>${resalePrice}</strong>
             </p>
           </div>
           <div className="flex justify-between ">
@@ -61,7 +61,7 @@ const SingleCard = ({ machinData, setBookingData }) => {
           <div className="card-actions justify-end">
             <label
               htmlFor="my-modal"
-              onClick={()=>setBookingData(machinData)}
+              onClick={()=>setBookingData(machineData)}
               className="btn hove:border-none border-orange-300 btn-outline hover:bg-orange-300"
             >
               Book Now

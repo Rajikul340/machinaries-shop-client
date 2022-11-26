@@ -1,14 +1,13 @@
 
 
 
-export const getRole = async email => {
-
+export const getRole = async (email) => {
     const response = await fetch(`http://localhost:5000/users/${email}`)
-    const data = await response.json();
-    return data?.role
+    const user = await response.json();
+    return user?.role;
   }
 
-
+//admin request 
   export const adminRequest = async user => {
     const response = await fetch(
       `http://localhost:5000/users/${user?.email}`,
@@ -23,7 +22,7 @@ export const getRole = async email => {
     )
     const data = await response.json()
     console.log(data)
-    return data
+    return data;
   }
   
   export const addProduct = async(product) =>{

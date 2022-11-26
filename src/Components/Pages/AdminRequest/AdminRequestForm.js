@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AdminRequestForm = ({handleSubmit}) => {
-    
+
     return (
         <>
         <div className='flex justify-center mt-6'>
@@ -15,7 +15,7 @@ const AdminRequestForm = ({handleSubmit}) => {
                   Location
                 </label>
                 <input
-                  className='w-full px-4 py-3 text-gray-800 border border-green-300 focus:outline-green-500 rounded-md bg-green-50'
+                  className='w-full px-4 py-3 text-gray-800 border border-orange-300 focus:outline-orange-500 rounded-md bg-green-50'
                   name='location'
                   id='location'
                   type='text'
@@ -29,7 +29,7 @@ const AdminRequestForm = ({handleSubmit}) => {
               <div className='flex space-x-4 items-center'>
                 <label
                   htmlFor='image'
-                  className='p-3 text-center rounded-md cursor-pointer text-gray-500 font-bold border  border-green-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-green-400 hover:border-white hover:text-white'
+                  className='p-3 text-center rounded-md cursor-pointer text-gray-500 font-bold border  border-orange-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-orange-400 hover:border-white hover:text-white'
                 >
                   <input
                     type='file'

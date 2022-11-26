@@ -1,11 +1,25 @@
 import React from 'react';
 
-const displaysellingData = ({sellingData}) => {
-    
+const displaysellingData = ({sellingData, handleDelete}) => {
+    const{title, image,ResalePrice, _id} = sellingData;
+
     return (
-        <div>
-            <h1>display data </h1>
-        </div>
+        <tr key={_id}>
+        <th><img src={image} className='w-16 h-16 rounded-full' alt="" /></th>
+        <td>{title}</td>
+        <td>${ResalePrice}</td>
+       
+        <td>
+          
+            <button
+              onClick={() => handleDelete(_id)}
+              className="btn btn-xs btn-outline border-orange-300 text-white bg-orange-400"
+            >
+            Delete
+            </button>
+         
+        </td>
+      </tr>
     );
 };
 

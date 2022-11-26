@@ -1,18 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { adminRequest, getRole } from '../../Auth/Auth';
+import { adminRequest, getRole, imageUpload } from '../../Auth/Auth';
 import { UserContext } from '../../AuthProvider/AuthProvider';
 import AdminRequestForm from './AdminRequestForm';
 
 const AdminRequest = () => {
     const { user } = useContext(UserContext)
-  const [role, setRole] = useState(null)
+  const [role, setRole] = useState('');
+  console.log('role to', role);
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     setLoading(true)
     getRole(user?.email)
     .then(data => {
       setRole(data)
-      console.log(data);
+      console.log("admin request by role",data);
       setLoading(false)
     })
   }, [user])
@@ -21,9 +22,11 @@ const AdminRequest = () => {
     event.preventDefault()
     const location = event.target.location.value
     // Image Upload
-    const image = event.target.image.files[0]
+    const image = event.target.image.files[0];
+
     // Upload ID image
-    // imageUpload(image)
+
+    imageUpload(image)
       .then(result => {
         const hostData = {
           email: user?.email,
@@ -47,7 +50,9 @@ const AdminRequest = () => {
           Request Sent, wait for admin approval
         </div>
       ) : (
-        <>{!loading && <AdminRequestForm handleSubmit={handleSubmit} />}</>
+        <>{!loading && <AdminRequestForm 
+            handleSubmit={handleSubmit}
+             />}</>
       )}
     </>
     );
