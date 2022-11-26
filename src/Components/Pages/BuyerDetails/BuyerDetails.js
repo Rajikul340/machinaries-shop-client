@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BuyerDetails = ({buyerDetails,  handleUpdate}) => {
+const BuyerDetails = ({buyerDetails,  handleDelete}) => {
     console.log(buyerDetails);
     const{_id, name, img, role, email, } = buyerDetails;
     return (
@@ -12,7 +12,7 @@ const BuyerDetails = ({buyerDetails,  handleUpdate}) => {
         <td>
           {role !== "admin" && (
             <button
-              onClick={() => handleUpdate(_id)}
+              onClick={() => handleDelete(_id)}
               className="btn btn-xs btn-outline border-orange-300 text-white bg-orange-400"
             >
             Delete

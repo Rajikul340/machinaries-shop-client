@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import BuyerDetails from "../BuyerDetails/BuyerDetails";
+import { toast } from "react-toastify";
+
 
 const AllBuyers = () => {
 
@@ -21,6 +23,27 @@ const AllBuyers = () => {
   const BuyersData = buyerData.filter(
     (SingleBuyer) => SingleBuyer.role === "buyer"
   );
+
+  const handleDelete = (id) => {
+    const proceed = window.confirm(
+      "Are you sure, you want delete"
+    );
+    if (proceed) {
+      fetch(`http://localhost:5000/users/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+          
+            toast.success("Deleted successfully");
+          
+          
+          }
+    
+      });
+    }
+  }
 
   return (
     <div className="lg:mr-44 lg:ml-6">
@@ -49,6 +72,7 @@ const AllBuyers = () => {
                   <BuyerDetails
                     key={buyerDetails._id}
                     buyerDetails={buyerDetails}
+                    handleDelete={handleDelete}
                   />
                 ))}
               </tbody>

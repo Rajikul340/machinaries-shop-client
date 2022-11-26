@@ -48,28 +48,27 @@ const DashobarSideBar = ({ role }) => {
           {/* Branding & Profile Info */}
           <div>
             <div className="flex flex-col items-center mt-6 -mx-2">
-              <nav>
-                {role && role !== "requested" ? (
-                  <>{role === "admin" ?  <>
-                  <h3 className="text-2xl font-bold font-serif ">
-                    Admin DashBoard
-                  </h3>
-                  <hr />
-                </> :   <>
-                <h3 className="text-2xl font-bold font-serif ">
-                  Buyer DashBoard
-                </h3>
+            <nav>
+              {role && role !== "requested" ? (
+                <>{role === "admin" ?
+                 <>
+                 <h2 className="font-bold font-serif lg:text-2xl">Admin Dashboard</h2>
+                 <hr />
+                </>
+                 : 
+                 <>
+                 <h2 className="font-bold font-serif lg:text-2xl">Buyer Dashboard</h2>
+                 <hr />
+                </>
+                 
+                 }</>
+              ) : (
+                <>
+                <h2 className="font-bold font-serif lg:text-2xl">Seller Dashboard</h2>
                 <hr />
-              </>}</>
-                ) : (
-                    <>
-                    <h3 className="text-2xl font-bold font-serif ">
-                      Seller DashBoard
-                    </h3>
-                    <hr />
-                  </>
-                )}
-              </nav>
+               </>
+              )}
+            </nav>
             
             </div>
           </div>
@@ -83,6 +82,8 @@ const DashobarSideBar = ({ role }) => {
                 <SellerMenu />
               )}
             </nav>
+
+          
           </div>
         </div>
 

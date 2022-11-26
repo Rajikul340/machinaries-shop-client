@@ -2,10 +2,13 @@ import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import SellerDetails from "../SellerDetails/SellerDetails";
+import { toast } from "react-toastify";
+import {useNavigate}  from 'react-router-dom'
 
 const AllSeller = () => {
   const [sellerData, setSellerData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate()
 
   useEffect(() => {
     setLoading(true);
@@ -19,6 +22,27 @@ const AllSeller = () => {
   const AllsellerData = sellerData.filter(
     (singleData) => singleData?.role === "seller"
   );
+
+  const handleDelete = (id) => {
+    const proceed = window.confirm(
+      "Are you sure, you want delete"
+    );
+    if (proceed) {
+      fetch(`http://localhost:5000/users/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+          
+            toast.success("Deleted successfully");
+          
+          
+          }
+        setSellerData(" ")
+      });
+    }
+  };
 
   console.log("single seler", AllsellerData);
   return (
@@ -43,7 +67,11 @@ const AllSeller = () => {
             </thead>
             <tbody>
               {AllsellerData?.map((sellerInfo) => (
-                <SellerDetails key={sellerInfo._id} sellerInfo={sellerInfo} />
+                <SellerDetails
+                 key={sellerInfo._id} 
+                 sellerInfo={sellerInfo} 
+                 handleDelete ={handleDelete}
+                 />
               ))}
             </tbody>
           </table>

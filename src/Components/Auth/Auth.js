@@ -6,5 +6,5 @@ export const getRole = async email => {
       `http://localhost:5000/users/${email}`,
     )
     const data = await response.json()
-    return data.role
+    return data?.role
   }
