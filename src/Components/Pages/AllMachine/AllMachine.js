@@ -9,7 +9,7 @@ import BookingModal from "../BookingModal/BookingModal";
 const AllMachine = () => {
   const { loader } = useContext(UserContext);
   const allMachineData = useLoaderData();
- const [booingData, setBookingData] = useState([])
+ const [bookingData, setBookingData] = useState([])
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
@@ -27,9 +27,9 @@ const AllMachine = () => {
       )}
       <div>
         {
-          booingData && (
+          bookingData && (
             <BookingModal
-             booingData={booingData}
+            bookingData={bookingData}
              setBookingData={setBookingData}
             ></BookingModal>
           )

@@ -22,17 +22,20 @@ const DashBoard = () => {
        <h1 className='lg:text-6xl capitalize font-serif font-bold text-orange-400'>welcome to</h1>
       </div>
       <div className='flex justify-center text-gray-500 items-center mt-4'>
-        {!loading && role ? (
-          <>
-            {role === 'admin' ? (
-              <p className='text-3xl font-medium'>Admin Dashboard</p>
-            ) : (
-              <p className='text-3xl font-medium'>Buyer Dashboard</p>
-            )}
-          </>
-        ) : (
-          <p className='text-3xl font-medium'>Seller Dashboard</p>
-        )}
+      {role && role !== "requested" ? (
+                <>{role === "admin" ?   <>
+                <h2 className="font-bold font-serif lg:text-2xl">Admin Dashboard</h2>
+                <hr />
+               </> :    <>
+                 <h2 className="font-bold font-serif lg:text-2xl">Buyer Dashboard</h2>
+                 <hr />
+                </>}</>
+              ) : (
+                <>
+                <h2 className="font-bold font-serif lg:text-2xl">Seller Dashboard</h2>
+                <hr />
+               </>
+              )}
       </div>
     </div>
   )

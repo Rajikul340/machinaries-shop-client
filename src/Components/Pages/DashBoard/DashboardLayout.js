@@ -24,7 +24,7 @@ const DashboardLayout = () => {
   return (
     <div className="">
       {loading ? (
-        " "
+     <p>Loading...</p>
       ) : (
         <>
        

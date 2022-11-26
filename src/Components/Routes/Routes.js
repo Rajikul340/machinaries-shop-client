@@ -11,6 +11,7 @@ import DashboardLayout from '../Pages/DashBoard/DashboardLayout';
 import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import Home from '../Pages/Home/Home'
 import Login from '../Pages/Login/Login';
+import Payment from '../Pages/Payment/Payment';
 import ProductPage from '../Pages/ProductPage/ProductPage';
 import Register from '../Pages/Register/Register';
 import PrivetRoute from './PrivateRout';
@@ -67,6 +68,11 @@ export const router = createBrowserRouter([
             {
                 path:'/dashboard/allseller',
                 element:<AllSeller></AllSeller>
+            },
+            {
+                path:"/dashboard/payment/:id",
+                element:<Payment></Payment>,
+                loader:({params}) => fetch(`http://localhost:5000/AllMachine/${params.id}`)
             }
 
         ]

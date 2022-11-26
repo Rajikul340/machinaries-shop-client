@@ -5,8 +5,9 @@ import { UserContext } from "../../AuthProvider/AuthProvider";
 
 
 
-const BookingModal = ({ booingData, setBookingData}) => {
-  const { title, resalePrice, img } = booingData;
+const BookingModal = ({ bookingData, setBookingData}) => {
+  console.log(bookingData);
+  const { title, resalePrice, img, category_id } = bookingData;
 
 var now = new Date()
 var date = now.toLocaleDateString();
@@ -23,13 +24,15 @@ var date = now.toLocaleDateString();
 
     const booking = {
       title,
-      name:user?.displayName,
+      buyer:user?.displayName,
       date,
       buyerEmail: email,
       phone,
       resalePrice,
       location,
-      img
+      img,
+      category_id,
+      Status:"booking"
     };
 
     fetch("http://localhost:5000/AllMachine", {
