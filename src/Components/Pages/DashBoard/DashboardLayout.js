@@ -24,8 +24,8 @@ const DashboardLayout = () => {
 
   return (
     <div className="">
-    {
-   
+    
+     
       <>
        
       <DashobarSideBar role={role} />
@@ -34,7 +34,7 @@ const DashboardLayout = () => {
         <Outlet></Outlet>
       </div>
     </>
-    }
+    
        
    
     </div>

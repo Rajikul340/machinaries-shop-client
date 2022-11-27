@@ -44,11 +44,9 @@ const AdminRequest = () => {
   };
   return (
     <>
-      {loading ? (
-        <p>Loading..</p>
-      ) : (
+   
         <AdminRequestForm handleSubmit={handleSubmit} />
-      )}
+    
     </>
   );
 };

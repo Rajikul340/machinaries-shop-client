@@ -45,25 +45,10 @@ const DashobarSideBar = ({ role }) => {
 
    
    
-          {/* Branding & Profile Info */}
+
           <div>
             <div className="flex flex-col items-center mt-6 -mx-2">
-            {/* <nav>
-              {role && role !== "requested" ? (
-                <>{role === "admin" ?   <>
-                <h2 className="font-bold font-serif lg:text-2xl">Admin Dashboard</h2>
-                <hr />
-               </> :    <>
-                 <h2 className="font-bold font-serif lg:text-2xl">Buyer Dashboard</h2>
-                 <hr />
-                </>}</>
-              ) : (
-                <>
-                <h2 className="font-bold font-serif lg:text-2xl">Seller Dashboard</h2>
-                <hr />
-               </>
-              )}
-            </nav> */}
+    
             
             </div>
           </div>
@@ -72,9 +57,10 @@ const DashobarSideBar = ({ role }) => {
           <div className="flex flex-col justify-between flex-1 mt-6">
           <nav>
               {role && role !== 'requested' ? (
-                <>{role === 'admin' ? <AdminMenu /> : <SellerMenu />} </>
+                <>{role === 'admin' ? <AdminMenu /> :      <BuyerMenu />} </>
               ) : (
-                <BuyerMenu />
+           
+                <SellerMenu />
               )}
             </nav>
 
