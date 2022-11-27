@@ -6,10 +6,10 @@ const SideBar = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/machine_category")
+    fetch(" https://machinaries-shop-server.vercel.app/machine_category")
       .then((res) => res.json())
       .then((data) => {
-        console.log("category data ",data);
+        console.log("category data ", data);
         setCategories(data);
       });
   }, []);
@@ -19,12 +19,13 @@ const SideBar = () => {
       <h1 className="text-xl font-bold font-serif my-2">Categories</h1>
       <hr />
       {categories?.map((category) => (
-       <>
-        <p key={category?.category_id}>
-          <Link to={`/machine_category/${category?.category_id}`}>
-            <p className="capitalize"> {category?.name}</p>
-          </Link>
-        </p></>
+        <>
+          <p key={category?.category_id}>
+            <Link to={`/machine_category/${category?.category_id}`}>
+              <p className="capitalize"> {category?.name}</p>
+            </Link>
+          </p>
+        </>
       ))}
     </div>
   );

@@ -15,7 +15,9 @@ const ManageProduct = () => {
   } = useQuery({
     queryKey: ["AllMachine"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/AllMachine`);
+      const res = await fetch(
+        ` https://machinaries-shop-server.vercel.app/AllMachine`
+      );
       const data = await res.json();
       return data;
     },
@@ -24,25 +26,25 @@ const ManageProduct = () => {
     (singleData) => singleData?.sellerInfo?.sellerMail === user?.email
   );
   const handleDelete = (id) => {
-    const proceed = window.confirm(
-      "Are you sure, you want delete"
-    );
+    const proceed = window.confirm("Are you sure, you want delete");
     if (proceed) {
-      fetch(`http://localhost:5000/AllMachine/${id}`, {
+      fetch(` https://machinaries-shop-server.vercel.app/AllMachine/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-          
             toast.success("Deleted successfully");
-          refetch();
-          
+            refetch();
           }
-    
-      });
+        });
     }
-  }
+  };
+
+  const handleAdvertise = (id) => {
+    console.log(id);
+  };
+
   return (
     <div className="lg:mr-44 lg:ml-6">
       {isLoading ? (
@@ -51,7 +53,7 @@ const ManageProduct = () => {
         <>
           <div>
             <h1 className="lg:text-2xl font-bold font-serif my-2">
-            Selling Products
+              Selling Products
             </h1>
 
             <table className="table w-full">
@@ -59,6 +61,7 @@ const ManageProduct = () => {
                 <tr>
                   <th>Avater</th>
                   <th>product</th>
+                  <th>Status</th>
                   <th>Resale price</th>
                   <th>Delete </th>
                 </tr>
@@ -69,6 +72,7 @@ const ManageProduct = () => {
                     key={sellingData?._id}
                     sellingData={sellingData}
                     handleDelete={handleDelete}
+                    handleAdvertise={handleAdvertise}
                   />
                 ))}
               </tbody>

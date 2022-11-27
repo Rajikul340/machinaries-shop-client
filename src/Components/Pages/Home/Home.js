@@ -10,8 +10,9 @@ const Home = () => {
       <div className="flex">
         <SideBar></SideBar>
        <div>
-          <AdvertiseItem></AdvertiseItem>
+        
           <Banner className="ml-10"></Banner>
+          <AdvertiseItem></AdvertiseItem>
           <AboutProducts></AboutProducts>
 
         </div>

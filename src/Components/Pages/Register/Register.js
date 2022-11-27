@@ -9,17 +9,14 @@ const Register = () => {
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
   const [error, setError] = useState("");
-  const [selectedValue, setSelectedValue] =useState("");
+  const [selectedValue, setSelectedValue] = useState("");
 
-
-
-  const handleRadioBtn = event =>{
+  const handleRadioBtn = (event) => {
     setSelectedValue(event.target.value);
     event.preventDefault();
-  }
+  };
 
   const handleSubmit = (event) => {
-    
     event.preventDefault();
     setLoader(true);
     const form = event.target;
@@ -29,24 +26,23 @@ const Register = () => {
     const password = form.password.value;
     console.log(email, password, name, photoURL);
 
-    const userCollection ={
-              
+    const userCollection = {
       name,
       email,
-      img:photoURL,
+      img: photoURL,
       role: selectedValue,
- }
-  fetch('http://localhost:5000/users',{
-    method:"PUT",
-    headers:{
-      'content-type' : 'application/json'
-    },
-    body: JSON.stringify(userCollection)
-  })
-  .then(res=>res.json())
-  .then(data=>{
-    console.log(data);
-  })
+    };
+    fetch(" https://machinaries-shop-server.vercel.app/users", {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(userCollection),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
 
     createUser(email, password)
       .then((result) => {
@@ -64,25 +60,23 @@ const Register = () => {
         console.log(err);
       });
 
-      const handelprofileUpdate = (name, photoURL) => {
-        const profile = {
-          displayName: name,
-          photoURL: photoURL,
-        };
-    
-        handleUpdate(profile)
-          .then((result) => {
-            const user = result?.user;
-            console.log('update user', user);
-           
-            
-            console.log(result);
-          })
-          .catch((err) => console.log(err));
+    const handelprofileUpdate = (name, photoURL) => {
+      const profile = {
+        displayName: name,
+        photoURL: photoURL,
       };
+
+      handleUpdate(profile)
+        .then((result) => {
+          const user = result?.user;
+          console.log("update user", user);
+
+          console.log(result);
+        })
+        .catch((err) => console.log(err));
+    };
   };
 
-  
   const content = loader && <p>loading...</p>;
 
   return (
@@ -140,17 +134,21 @@ const Register = () => {
             name="seller"
             type="radio"
           />
-          <label htmlFor=""><span className="p-2">Seller Account</span></label>
+          <label htmlFor="">
+            <span className="p-2">Seller Account</span>
+          </label>
 
           <input
-        
             checked={selectedValue === "buyer"}
             onChange={handleRadioBtn}
             value="buyer"
             name="buyer"
             type="radio"
           />
-          <label htmlFor=""> <span className="p-2">Buyer Account</span> </label>
+          <label htmlFor="">
+            {" "}
+            <span className="p-2">Buyer Account</span>{" "}
+          </label>
 
           <div className="form-control ">
             <button

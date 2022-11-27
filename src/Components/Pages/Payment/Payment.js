@@ -9,38 +9,29 @@ import { UserContext } from "../../AuthProvider/AuthProvider";
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK);
 
 const Payment = () => {
+  //  const {user}  = useContext(UserContext);
+  //   const { data: buyerData = [], refetch, isLoading } = useQuery({
+  //     queryKey: [`AllMachine`],
+  //     queryFn: async ({params}) => {
+  //       const res = await fetch(` https://machinaries-shop-server.vercel.app/AllMachine`);
+  //       const data = await res.json();
+  //       return data;
+  //     },
+  //   });
 
-//  const {user}  = useContext(UserContext);
-//   const { data: buyerData = [], refetch, isLoading } = useQuery({
-//     queryKey: [`AllMachine`],
-//     queryFn: async ({params}) => {
-//       const res = await fetch(`http://localhost:5000/AllMachine`);
-//       const data = await res.json();
-//       return data;
-//     },
-//   });
+  //   const orderData = buyerData.filter(singleData=>singleData?.buyerEmail === user?.email)
+  //   console.log('patment page but tanstan query data order', orderData);
 
-//   const orderData = buyerData.filter(singleData=>singleData?.buyerEmail === user?.email)
-//   console.log('patment page but tanstan query data order', orderData);
-
-
-
-const orderData = useLoaderData();
-console.log('payment route theke asa data', orderData);
-
-
+  const orderData = useLoaderData();
+  console.log("payment route theke asa data", orderData);
 
   return (
     <div className="border w-96 p-4 ">
-             
       <div className="">
         <Elements stripe={stripePromise}>
-       {
-       orderData?.map(singleData=><CheckOut
-        key={singleData?._id}
-        singleData={singleData}
-       />)
-       }
+          {orderData?.map((singleData) => (
+            <CheckOut key={singleData?._id} singleData={singleData} />
+          ))}
         </Elements>
       </div>
     </div>

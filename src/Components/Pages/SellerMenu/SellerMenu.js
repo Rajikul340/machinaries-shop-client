@@ -6,7 +6,7 @@ import { FingerPrintIcon, UserPlusIcon } from '@heroicons/react/24/solid'
 const SellerMenu = () => {
     return (
         <>
-        <h1>Seller Dahsobard</h1>
+        <h1 >Seller Dahsobard</h1>
         <NavLink
           to='/dashboard/AddProduct'
           className={({ isActive }) =>

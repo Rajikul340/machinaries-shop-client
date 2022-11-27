@@ -1,15 +1,14 @@
-import React, { useContext } from 'react';
-import { toast } from 'react-toastify';
-import { UserContext } from '../../AuthProvider/AuthProvider';
+import React, { useContext } from "react";
+import { toast } from "react-toastify";
+import { UserContext } from "../../AuthProvider/AuthProvider";
 
-const WhiteListModal = ({setBookingData, bookingData}) => {
-
-    console.log(bookingData);
+const WhiteListModal = ({ setBookingData, bookingData }) => {
+  console.log(bookingData);
   const { title, resalePrice, img, category_id } = bookingData;
 
-const now = new Date()
-const date = now.toLocaleDateString();
-  console.log(date)
+  const now = new Date();
+  const date = now.toLocaleDateString();
+  console.log(date);
 
   const { user } = useContext(UserContext);
 
@@ -22,7 +21,7 @@ const date = now.toLocaleDateString();
 
     const booking = {
       title,
-      buyer:user?.displayName,
+      buyer: user?.displayName,
       date,
       buyerEmail: email,
       phone,
@@ -30,10 +29,10 @@ const date = now.toLocaleDateString();
       location,
       img,
       category_id,
-      Status:"booking"
+      Status: "booking",
     };
 
-    fetch("http://localhost:5000/AllMachine", {
+    fetch(" https://machinaries-shop-server.vercel.app/AllMachine", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -46,7 +45,6 @@ const date = now.toLocaleDateString();
           console.log(data);
           toast.success("booking successfully");
           setBookingData(" ");
-   
         } else {
           toast.error(data.message);
           // toast.error('already booked')
@@ -98,7 +96,6 @@ const date = now.toLocaleDateString();
               name="location"
               className="input input-bordered w-full "
               placeholder="meeting place"
-           
             />
             <input
               type="submit"
@@ -108,7 +105,10 @@ const date = now.toLocaleDateString();
           </form>
 
           <div className="modal-action">
-            <label htmlFor="whitelist-modal" className="btn btn-outline border-orange-300 hover:bg-orange-300">
+            <label
+              htmlFor="whitelist-modal"
+              className="btn btn-outline border-orange-300 hover:bg-orange-300"
+            >
               close
             </label>
           </div>

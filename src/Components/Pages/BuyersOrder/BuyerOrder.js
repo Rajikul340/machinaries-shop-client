@@ -5,7 +5,6 @@ import { useContext } from "react";
 import OrderDetails from "../OrderDetails/OrderDetails";
 import { toast } from "react-toastify";
 
-
 const BuyerOrder = () => {
   const { user } = useContext(UserContext);
 
@@ -16,7 +15,9 @@ const BuyerOrder = () => {
   } = useQuery({
     queryKey: ["AllMachine"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/AllMachine`);
+      const res = await fetch(
+        ` https://machinaries-shop-server.vercel.app/AllMachine`
+      );
       const data = await res.json();
       return data;
     },
@@ -28,28 +29,21 @@ const BuyerOrder = () => {
   );
   // console.log("buyer er orders ", buyerData);
 
-
   const handleDelete = (id) => {
-    const proceed = window.confirm(
-      "Are you sure, you want delete"
-    );
+    const proceed = window.confirm("Are you sure, you want delete");
     if (proceed) {
-      fetch(`http://localhost:5000/AllMachine/${id}`, {
+      fetch(` https://machinaries-shop-server.vercel.app/AllMachine/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-          
             toast.success("Deleted successfully");
             refetch();
-          
           }
-    
-      });
+        });
     }
-  }
-
+  };
 
   return (
     <div className="lg:mr-44 lg:ml-6">
@@ -73,9 +67,11 @@ const BuyerOrder = () => {
             </thead>
             <tbody>
               {buyerData?.map((singleData) => (
-                <OrderDetails key={singleData?._id}
-                handleDelete={handleDelete}
-                singleData={singleData} />
+                <OrderDetails
+                  key={singleData?._id}
+                  handleDelete={handleDelete}
+                  singleData={singleData}
+                />
               ))}
             </tbody>
           </table>

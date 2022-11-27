@@ -1,36 +1,48 @@
-export const getRole = async email => {
+export const getRole = async (email) => {
   const response = await fetch(
-    `http://localhost:5000/users/${email}`,
+    ` https://machinaries-shop-server.vercel.app/users/${email}`,
     {
-      method: 'GET',
+      method: "GET",
     }
-  )
-  const user = await response.json()
-  return user?.role
-}
+  );
+  const user = await response.json();
+  return user?.role;
+};
 
 //admin request
 export const adminRequest = async (user) => {
-  const response = await fetch(`http://localhost:5000/users/${user?.email}`, {
-    method: "PUT",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(user),
-  });
+  const response = await fetch(
+    ` https://machinaries-shop-server.vercel.app/users/${user?.email}`,
+    {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+        headers: {
+          authorization: `bearer ${localStorage.getItem("token")}`,
+        },
+      },
+      body: JSON.stringify(user),
+    }
+  );
   const data = await response.json();
   console.log(data);
   return data;
 };
 
 export const addProduct = async (product) => {
-  const res = await fetch(`http://localhost:5000/AllMachine`, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(product),
-  });
+  const res = await fetch(
+    ` https://machinaries-shop-server.vercel.app/AllMachine`,
+    {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        headers: {
+          authorization: `bearer ${localStorage.getItem("token")}`,
+        },
+      },
+      body: JSON.stringify(product),
+    }
+  );
   const data = await res.json();
 
   return data;
@@ -52,36 +64,37 @@ export const imageUpload = async (image) => {
   }
 };
 
-
-export const makeAdmin = async user => {
-  delete user._id
+export const makeAdmin = async (user) => {
+  delete user._id;
   const response = await fetch(
-    `http://localhost:5000/users/${user?.email}`,
+    ` https://machinaries-shop-server.vercel.app/users/${user?.email}`,
     {
-      method: 'PUT',
+      method: "PUT",
       headers: {
-        'content-type': 'application/json',
-        authorization: `Bearer ${localStorage.getItem('aircnc-token')}`,
+        "content-type": "application/json",
+        authorization: `bearer ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify({ ...user, role: 'admin' }),
+      body: JSON.stringify({ ...user, role: "admin" }),
     }
-  )
-  const users = await response.json()
+  );
+  const users = await response.json();
 
-  return users
-}
-
+  return users;
+};
 
 export const getAllSeller = async () => {
-  const response = await fetch(`http://localhost:5000/users`, {
-    method: 'GET',
-    headers: {
-      'content-type': 'application/json',
-  
-    },
-  })
-  console.log('test')
-  const users = await response.json()
+  const response = await fetch(
+    ` https://machinaries-shop-server.vercel.app/users`,
+    {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${localStorage.getItem("token")}`,
+      },
+    }
+  );
+  console.log("test");
+  const users = await response.json();
 
-  return users
-}
+  return users;
+};

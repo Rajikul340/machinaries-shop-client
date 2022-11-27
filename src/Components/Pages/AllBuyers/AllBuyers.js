@@ -4,10 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import BuyerDetails from "../BuyerDetails/BuyerDetails";
 import { toast } from "react-toastify";
 
-
 const AllBuyers = () => {
-
-
   const {
     data: buyerData = [],
     refetch,
@@ -15,7 +12,9 @@ const AllBuyers = () => {
   } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/users`);
+      const res = await fetch(
+        ` https://machinaries-shop-server.vercel.app/users`
+      );
       const data = await res.json();
       return data;
     },
@@ -25,25 +24,19 @@ const AllBuyers = () => {
   );
 
   const handleDelete = (id) => {
-    const proceed = window.confirm(
-      "Are you sure, you want delete"
-    );
+    const proceed = window.confirm("Are you sure, you want delete");
     if (proceed) {
-      fetch(`http://localhost:5000/users/${id}`, {
+      fetch(` https://machinaries-shop-server.vercel.app/users/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-          
             toast.success("Deleted successfully");
-          
-          
           }
-    
-      });
+        });
     }
-  }
+  };
 
   return (
     <div className="lg:mr-44 lg:ml-6">
@@ -51,11 +44,10 @@ const AllBuyers = () => {
         <p>Loading...</p>
       ) : (
         <>
-       
           <div>
-          <h1 className="lg:text-2xl font-bold font-serif my-2">
-            Buyer Details
-          </h1>
+            <h1 className="lg:text-2xl font-bold font-serif my-2">
+              Buyer Details
+            </h1>
 
             <table className="table w-full">
               <thead>

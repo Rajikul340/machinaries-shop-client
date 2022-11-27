@@ -1,12 +1,20 @@
 import React from 'react';
 
-const displaysellingData = ({sellingData, handleDelete}) => {
-    const{title, image,ResalePrice, _id} = sellingData;
+const displaysellingData = ({sellingData, handleDelete, handleAdvertise}) => {
+    const{title, image,ResalePrice, _id, Status} = sellingData;
 
     return (
         <tr key={_id}>
         <th><img src={image} className='w-16 h-16 rounded-full' alt="" /></th>
         <td>{title}</td>
+        <td> { Status === "booking" ? "Sold" :
+        <button
+            onClick={()=> handleAdvertise(sellingData)}
+         className='btn btn-xs btn-outline border-orange-300 text-white bg-orange-400 '>advertise</button>
+          }
+
+          
+        </td>
         <td>${ResalePrice}</td>
        
         <td>

@@ -46,19 +46,7 @@ const Login = () => {
           email: user?.email,
         };
         console.log(user);
-        fetch("https://maseter-builder-servar.vercel.app/jwt", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(currentUser),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            setLoader(false);
-            localStorage.setItem("token", data.token);
-          });
+
         toast.success("login successfully");
         navigate(from, { replace: true });
       })

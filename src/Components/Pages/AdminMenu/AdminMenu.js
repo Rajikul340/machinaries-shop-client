@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 const AdminMenu = () => {
   return (
     <>
-    <h1> Admin Dashboard</h1>
+    <h1 className='lg:text-2xl font-serif font-bold'> Admin Dashboard</h1>
       <NavLink
         to='/dashboard/allbuyers'
         className={({ isActive }) =>

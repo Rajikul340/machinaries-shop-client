@@ -9,7 +9,7 @@
 // const AllMachine = () => {
 //   const { loading } = useContext(UserContext);
 //   const [bookingData, setBookingData] = useState([])
-  
+
 //   const {
 //     data: allMechineData = [],
 //     refetch,
@@ -17,7 +17,7 @@
 //   } = useQuery({
 //     queryKey: [`AllMachine/:id`],
 //     queryFn: async ({params}) => {
-//       const res = await fetch(`http://localhost:5000/AllMachine/${params.id}`);
+//       const res = await fetch(` https://machinaries-shop-server.vercel.app/AllMachine/${params.id}`);
 //       const data = await res.json();
 //       return data;
 //     },
@@ -29,8 +29,8 @@
 //     <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
 //       {loading ? (
 //         <p>loading...</p>
-//       ) : 
-      
+//       ) :
+
 //          allMechineData &&
 
 //          allMechineData.map(machineData=><SingleCard
