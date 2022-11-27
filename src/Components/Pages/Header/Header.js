@@ -24,14 +24,16 @@ const Header = () => {
      
     <div>
    
-   <div className="mr-3">
-   <Link className="text-lg text-orange-400 font-semibold font-serif " to='/blogs'>Blogs </Link>
+   <div className="mr-7">
+   <Link className="text-lg text-orange-400 font-semibold font-serif mr-4" to='/blogs'>Blogs </Link>
+   {/* <Link className="text-lg text-orange-400 font-semibold font-serif" to='/dashboard/whitelist'>WhiteList </Link> */}
    </div>
     {
       user?.email ?
       <>
        <div className="flex-none">
-        <div className="dropdown dropdown-end">
+        
+        {/* <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <div className="indicator">
               <svg
@@ -63,7 +65,8 @@ const Header = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
@@ -96,7 +99,6 @@ const Header = () => {
       :
        <>
       <div className="flex gap-4">
-         
         
          
         <Link className="text-lg text-orange-400 font-semibold font-serif" to='/register'>Registration </Link>

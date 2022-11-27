@@ -92,7 +92,7 @@ const AddProductForm = ({
             <div className='flex space-x-4 items-center'>
               <label
                 htmlFor='image'
-                className='p-3 text-center rounded-md cursor-pointer text-gray-500 font-bold border  border-orange-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-orange-400 hover:border-white hover:text-white'
+                className='p-3 text-center rounded-md bg-orange-400'
               >
                 {uploadButtonText}
                 <input

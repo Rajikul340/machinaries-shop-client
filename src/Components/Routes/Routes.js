@@ -4,7 +4,6 @@ import AddProduct from '../Pages/AddProduct/AddProduct';
 import ManageProduct from '../Pages/AddProduct/ManageProduct';
 import AdminRequest from '../Pages/AdminRequest/AdminRequest';
 import AllBuyers from '../Pages/AllBuyers/AllBuyers';
-import AllMachine from '../Pages/AllMachine/AllMachine';
 import AllSeller from '../Pages/AllSeller/AllSeller';
 import Blogs from '../Pages/Blogs/Blogs';
 import BuyerOrder from '../Pages/BuyersOrder/BuyerOrder';
@@ -15,9 +14,9 @@ import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import Home from '../Pages/Home/Home'
 import Login from '../Pages/Login/Login';
 import Payment from '../Pages/Payment/Payment';
-import ProductPage from '../Pages/ProductPage/ProductPage';
 import Register from '../Pages/Register/Register';
-import PrivetRoute from './PrivateRout';
+import WhistList from '../Pages/WhistLinst/WhistList';
+import PrivateRout from '../Routes/PrivateRout';
 
 
 export const router = createBrowserRouter([
@@ -75,7 +74,7 @@ export const router = createBrowserRouter([
             {
                 path:"/dashboard/payment/:id",
                 element:<Payment></Payment>,
-                loader:({params}) => fetch(`http://localhost:5000/AllMachine/${params.id}`)
+                loader:({params}) => fetch(`http://localhost:5000/machineData/${params.id}`)
             },
             {
                 path:"/dashboard/AddProduct",
@@ -88,7 +87,11 @@ export const router = createBrowserRouter([
             {
                 path:"/dashboard/manageProduct",
                 element:<ManageProduct></ManageProduct>
-            }
+            },
+            {
+                path:'/dashboard/whitelist',
+                element:<WhistList></WhistList>
+            },
 
         ]
     }

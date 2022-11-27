@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 
 
 const CheckOut = ({singleData}) => {
-console.log(singleData);
-const { email, buyer, resalePrice} = singleData;
+console.log("checkout page theke data",singleData);
+const { email, buyer, resalePrice, title,_id} = singleData;
 
 const [clientSecret, setClientSecret] = useState("");
 const stripe = useStripe();
@@ -58,13 +58,14 @@ const handleSubmit = async (event) => {
     }
     setProcces(false);
     const payment = {
-        resalePrice,
+       resalePrice,
       email,
       transactionId: paymentIntent.id,
+      bookingId:_id
     };
 
     fetch("http://localhost:5000/payment", {
-      method: "POST",
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
@@ -72,6 +73,7 @@ const handleSubmit = async (event) => {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log('paymetn data is', data);
         if (data.insertedId) {
           setSuccess("Congrates ! payment succesfull");
           setTransactionId(paymentIntent.id);
@@ -80,24 +82,23 @@ const handleSubmit = async (event) => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/payment-intents", {
+    fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        authorization: `beare ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify({ resalePrice }),
+      body: JSON.stringify( {resalePrice} ),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log("clinetsecret tak ",data);
         setClientSecret(data?.clientSecret);
       });
   }, [resalePrice]);
 
     return (
         <div>
-        
+        <h1 className="mb-2">payment for {title}</h1>
            <form onSubmit={handleSubmit}>
       <CardElement
         className="border"

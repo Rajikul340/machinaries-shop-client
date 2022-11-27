@@ -8,7 +8,7 @@ import { Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
   const { user } = useContext(UserContext);
-  console.log("das user", user);
+  console.log("das user", user?.email);
   const [role, setRole] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -24,15 +24,18 @@ const DashboardLayout = () => {
 
   return (
     <div className="">
-    
-        <>
+    {
+   
+      <>
        
-          <DashobarSideBar role={role} />
+      <DashobarSideBar role={role} />
 
-          <div className="flex-1 m-5 ">
-            <Outlet></Outlet>
-          </div>
-        </>
+      <div className="flex-1 m-5 ">
+        <Outlet></Outlet>
+      </div>
+    </>
+    }
+       
    
     </div>
   );

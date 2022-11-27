@@ -3,11 +3,12 @@ import { useLoaderData } from 'react-router-dom';
 import { UserContext } from '../../AuthProvider/AuthProvider';
 import SingleCard from '../singleCard/SingleCard'
 import BookingModal from '../BookingModal/BookingModal'
+import WhiteListCard from '../WhistLinst/WhiteListCard';
 
 const Category = () => {
     const allMechineData = useLoaderData();
     const { loading } = useContext(UserContext);
-     const [bookingData, setBookingData] = useState([])
+     const [bookingData, setBookingData] = useState({})
 
     console.log('category router data ', allMechineData);
 
@@ -21,6 +22,7 @@ const Category = () => {
 
          allMechineData.map(machineData=><SingleCard
           machineData={machineData}
+          setBookingData={setBookingData}
          ></SingleCard>)
       }
       <div>
@@ -28,12 +30,13 @@ const Category = () => {
           bookingData && (
             <BookingModal
             bookingData={bookingData}
-             setBookingData={setBookingData}
+            setBookingData={setBookingData}
             ></BookingModal>
           )
         }
 
       </div>
+   
     </div>
     );
 };

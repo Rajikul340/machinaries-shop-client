@@ -21,12 +21,12 @@ const BuyerOrder = () => {
       return data;
     },
   });
-  console.log("query fun ", buyerOrder);
+  // console.log("query fun ", buyerOrder);
 
   const buyerData = buyerOrder.filter(
     (buyerDataByEmail) => buyerDataByEmail?.buyerEmail === user?.email
   );
-  console.log("buyer er orders ", buyerData);
+  // console.log("buyer er orders ", buyerData);
 
 
   const handleDelete = (id) => {
@@ -42,7 +42,7 @@ const BuyerOrder = () => {
           if (data.deletedCount > 0) {
           
             toast.success("Deleted successfully");
-          
+            refetch();
           
           }
     

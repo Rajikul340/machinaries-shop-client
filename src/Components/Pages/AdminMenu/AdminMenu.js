@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 const AdminMenu = () => {
   return (
     <>
+    <h1> Admin Dashboard</h1>
       <NavLink
         to='/dashboard/allbuyers'
         className={({ isActive }) =>
@@ -13,7 +14,7 @@ const AdminMenu = () => {
           }`
         }
       >
-        <FingerPrintIcon className='w-5 h-5' />
+      
 
         <span className='mx-4 font-medium'>All Buyers</span>
       </NavLink>
@@ -26,7 +27,7 @@ const AdminMenu = () => {
           }`
         }
       >
-        <UserPlusIcon className='w-5 h-5' />
+
 
         <span className='mx-4 font-medium'>All Sellers</span>
       </NavLink>
