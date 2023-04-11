@@ -18,3 +18,12 @@
 .imgSize{
  height: 70vh;  
 }
+
+.my-element {
+  transform: translate(0, 0) scale(1);
+  transition: transform 1s ease;
+}
+
+.my-element:hover {
+  transform: translate(10px, 10px) scale(1.1);
+}

@@ -101,14 +101,14 @@ const BookingModal = ({ bookingData, setBookingData }) => {
             <input
               type="submit"
               value="Submit"
-              className="input input-bordered w-full btn btn-outline border-orange-300 hover:bg-orange-300"
+              className="input input-bordered w-full btn  hover:border-orange-300 border border-orange-300 btn-outline hover:bg-orange-300"
             />
           </form>
 
           <div className="modal-action">
             <label
               htmlFor="my-modal"
-              className="btn btn-outline border-orange-300 hover:bg-orange-300"
+              className="btn  hover:border-orange-300 border border-orange-300 btn-outline hover:bg-orange-300"
             >
               close
             </label>
