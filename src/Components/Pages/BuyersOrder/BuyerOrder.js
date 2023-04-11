@@ -16,7 +16,7 @@ const BuyerOrder = () => {
     queryKey: ["AllMachine"],
     queryFn: async () => {
       const res = await fetch(
-        ` https://machinaries-shop-server.vercel.app/AllMachine`
+        ` http://localhost:5000/AllMachine`
       );
       const data = await res.json();
       return data;
@@ -32,7 +32,7 @@ const BuyerOrder = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want delete");
     if (proceed) {
-      fetch(` https://machinaries-shop-server.vercel.app/AllMachine/${id}`, {
+      fetch(` http://localhost:5000/AllMachine/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

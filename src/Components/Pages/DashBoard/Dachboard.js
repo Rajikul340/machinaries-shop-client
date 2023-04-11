@@ -21,9 +21,9 @@ console.log(user);
     <div className='h-screen text-gray-700 flex flex-col justify-center items-center pb-16'>
       <div className=''>
        <h1 className='lg:text-6xl capitalize font-serif font-bold text-orange-400'>welcome to</h1>
-       <p className='lg:text-2xl  font-bold font-serif text-center'>Your DashBoard</p>
+       {/* <p className='lg:text-2xl  font-bold font-serif text-center'>Your DashBoard</p> */}
       </div>
-      {/* <div className='flex justify-center text-gray-500 items-center mt-4'>
+      <div className='flex justify-center text-gray-500 items-center mt-4'>
       {!loading && role ? (
           <>
             {role === 'admin' ? (
@@ -35,7 +35,7 @@ console.log(user);
         ) : (
           <p className='text-3xl font-medium'>Seller Dashboard</p>
         )}
-      </div> */}
+      </div>
     </div>
   )
 }

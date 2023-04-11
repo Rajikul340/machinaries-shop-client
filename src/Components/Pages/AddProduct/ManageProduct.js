@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { UserContext } from "../../AuthProvider/AuthProvider";
-import DisplaySellingData from "../AddProduct/DisplaySellingData";
+import DisplaySellingData from "./DisplaySellingData";
 
 const ManageProduct = () => {
   const { user } = useContext(UserContext);
@@ -16,7 +16,7 @@ const ManageProduct = () => {
     queryKey: ["AllMachine"],
     queryFn: async () => {
       const res = await fetch(
-        ` https://machinaries-shop-server.vercel.app/AllMachine`
+        ` http://localhost:5000/AllMachine`
       );
       const data = await res.json();
       return data;
@@ -28,7 +28,7 @@ const ManageProduct = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want delete");
     if (proceed) {
-      fetch(` https://machinaries-shop-server.vercel.app/AllMachine/${id}`, {
+      fetch(` http://localhost:5000/AllMachine/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

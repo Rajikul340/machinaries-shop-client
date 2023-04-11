@@ -13,9 +13,8 @@ const AdvertiseItem = () => {
   } = useQuery({
     queryKey: ["AllMachine"],
     queryFn: async () => {
-      const res = await fetch(
-        ` https://machinaries-shop-server.vercel.app/AllMachine`
-      );
+      const res = await fetch();
+      // ` http://localhost:5000/AllMachine`
       const data = await res.json();
       return data;
     },
@@ -26,16 +25,12 @@ const AdvertiseItem = () => {
 
   return (
     <div className="grid lg:grid-cols-3 gap-3 mt-10">
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        AdvertiseData?.map((singleData) => (
-          <AdverticeCard
-            key={singleData._id}
-            singleData={singleData}
-          ></AdverticeCard>
-        ))
-      )}
+      {AdvertiseData?.map((singleData) => (
+        <AdverticeCard
+          key={singleData._id}
+          singleData={singleData}
+        ></AdverticeCard>
+      ))}
     </div>
   );
 };

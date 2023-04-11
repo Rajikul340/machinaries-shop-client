@@ -13,7 +13,7 @@ const Payment = () => {
   //   const { data: buyerData = [], refetch, isLoading } = useQuery({
   //     queryKey: [`AllMachine`],
   //     queryFn: async ({params}) => {
-  //       const res = await fetch(` https://machinaries-shop-server.vercel.app/AllMachine`);
+  //       const res = await fetch(` http://localhost:5000/AllMachine`);
   //       const data = await res.json();
   //       return data;
   //     },

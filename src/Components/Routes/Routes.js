@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
         element: <Category></Category>,
         loader: ({ params }) =>
           fetch(
-            ` https://machinaries-shop-server.vercel.app/machine_category/${params.id}`
+            ` http://localhost:5000/machine_category/${params.id}`
           ),
       },
     ],
@@ -76,7 +76,7 @@ export const router = createBrowserRouter([
         element: <Payment></Payment>,
         loader: ({ params }) =>
           fetch(
-            ` https://machinaries-shop-server.vercel.app/machineData/${params.id}`
+            ` http://localhost:5000/machineData/${params.id}`
           ),
       },
       {

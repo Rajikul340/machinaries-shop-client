@@ -61,7 +61,7 @@ const CheckOut = ({ singleData }) => {
       bookingId: _id,
     };
 
-    fetch(" https://machinaries-shop-server.vercel.app/payment", {
+    fetch(" http://localhost:5000/payment", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -79,7 +79,7 @@ const CheckOut = ({ singleData }) => {
   };
 
   useEffect(() => {
-    fetch(" https://machinaries-shop-server.vercel.app/create-payment-intent", {
+    fetch(" http://localhost:5000/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -1,6 +1,6 @@
 export const getRole = async (email) => {
   const response = await fetch(
-    ` https://machinaries-shop-server.vercel.app/users/${email}`,
+    ` http://localhost:5000/users/${email}`,
     {
       method: "GET",
     }
@@ -12,7 +12,7 @@ export const getRole = async (email) => {
 //admin request
 export const adminRequest = async (user) => {
   const response = await fetch(
-    ` https://machinaries-shop-server.vercel.app/users/${user?.email}`,
+    ` http://localhost:5000/users/${user?.email}`,
     {
       method: "PUT",
       headers: {
@@ -31,7 +31,7 @@ export const adminRequest = async (user) => {
 
 export const addProduct = async (product) => {
   const res = await fetch(
-    ` https://machinaries-shop-server.vercel.app/AllMachine`,
+    ` http://localhost:5000/AllMachine`,
     {
       method: "POST",
       headers: {
@@ -53,7 +53,7 @@ export const imageUpload = async (image) => {
   if (image) {
     const formData = new FormData();
     formData.append("image", image);
-    const url = `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMGBB_KEY}`;
+    const url = `https://api.imgbb.com/1/upload?key=19900dd0d8e1013079c1d14e32346566`;
 
     const response = await fetch(url, {
       method: "POST",
@@ -67,7 +67,7 @@ export const imageUpload = async (image) => {
 export const makeAdmin = async (user) => {
   delete user._id;
   const response = await fetch(
-    ` https://machinaries-shop-server.vercel.app/users/${user?.email}`,
+    ` http://localhost:5000/users/${user?.email}`,
     {
       method: "PUT",
       headers: {
@@ -84,7 +84,7 @@ export const makeAdmin = async (user) => {
 
 export const getAllSeller = async () => {
   const response = await fetch(
-    ` https://machinaries-shop-server.vercel.app/users`,
+    ` http://localhost:5000/users`,
     {
       method: "GET",
       headers: {

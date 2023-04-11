@@ -6,7 +6,7 @@ import "../../Style/Style.css";
 
 const Banner = () => {
   return (
-    <div>
+  
       <div className="carousel w-full">
         <div id="slide1" className="carousel-item relative w-full">
           <div className="carousel-img">
@@ -14,11 +14,11 @@ const Banner = () => {
           </div>
 
           <div className="absolute transform -translate-y-1/2 left-24 top-2/4">
-            <p className="lg:text-2xl font-bold text-white capitalize">
+            <p className="lg:text-3xl font-bold text-white uppercase">
               welcome to
             </p>
             <h1 className="lg:text-6xl text-2xl font-bold uppercase text-[#F7C02D] lg:mb-3">
-              machinaries <br /> shop
+              machinaries shop
             </h1>
             <p className="text-white lg:text-xl my-4">
               The Most Reusable machine you buy inexpensive. <br />
@@ -48,11 +48,11 @@ const Banner = () => {
             <img src={banner3} className="w-full" alt="" />
           </div>
           <div className="absolute transform -translate-y-1/2 left-24 top-2/4">
-            <p className="lg:text-2xl font-bold text-white capitalize">
+          <p className="lg:text-3xl font-bold text-white uppercase">
               welcome to
             </p>
             <h1 className="lg:text-6xl text-2xl font-bold uppercase text-[#F7C02D] lg:mb-3">
-              machinaries <br /> shop
+              machinaries  shop
             </h1>
             <p className="text-white lg:text-xl my-4">
               The Most Reusable machine you buy inexpensive. <br />
@@ -79,11 +79,11 @@ const Banner = () => {
             <img src={banner1} alt="" className="w-full" />
           </div>
           <div className="absolute transform -translate-y-1/2 left-24 top-2/4">
-            <p className="lg:text-2xl font-bold text-white capitalize">
+          <p className="lg:text-3xl font-bold text-white uppercase">
               welcome to
             </p>
             <h1 className="lg:text-6xl text-2xl font-bold uppercase text-[#F7C02D] lg:mb-3">
-              machinaries <br /> shop
+              machinaries shop
             </h1>
             <p className="text-white lg:text-xl my-4">
               The Most Reusable machine you buy inexpensive. <br />
@@ -107,7 +107,7 @@ const Banner = () => {
           
         </div>
       </div>
-    </div>
+   
   );
 };
 

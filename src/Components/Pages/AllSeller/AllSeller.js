@@ -15,7 +15,7 @@ const AllSeller = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(" https://machinaries-shop-server.vercel.app/users")
+      .get(" http://localhost:5000/users")
       .then((data) => {
         console.log(data);
         setSellerData(data.data);
@@ -30,7 +30,7 @@ const AllSeller = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want delete");
     if (proceed) {
-      fetch(` https://machinaries-shop-server.vercel.app/users/${id}`, {
+      fetch(` http://localhost:5000/users/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
