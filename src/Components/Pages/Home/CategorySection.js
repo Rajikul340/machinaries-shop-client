@@ -26,7 +26,7 @@ const CategorySection = () => {
       <div className="md:flex md:justify-between">
         {categories?.map((category) => (
           <>
-            <div className="border " key={category?.category_id}>
+            <div className="border my-6 md:my-0 " key={category?.category_id}>
               <Link to={`/machine_category/${category?.category_id}`}>
                 <div className="  my-element bg-base-100 shadow-xl" >
                   <figure>
