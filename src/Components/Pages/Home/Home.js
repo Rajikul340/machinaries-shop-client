@@ -3,6 +3,8 @@ import AboutProducts from "./AboutProducts";
 import AdvertiseItem from "./AdvertiseItem";
 import Banner from "./Banner";
 import CategorySection from "./CategorySection";
+import HelpSection from "./HelpSection";
+import EstublishSection from "./EstablishedSection";
 
 const Home = () => {
   return (
@@ -13,6 +15,8 @@ const Home = () => {
         <CategorySection />
         <AdvertiseItem></AdvertiseItem>
         <AboutProducts></AboutProducts>
+        <HelpSection/>
+        <EstublishSection/>
       </div>
     </div>
   );

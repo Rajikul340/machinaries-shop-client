@@ -39,7 +39,9 @@ const CategorySection = () => {
                   <div className="card-body">
                     <h2 className="card-title">{category?.name}</h2>
                     <div className="card-actions justify-end">
-                      <button className="btn btn-primary">Details</button>
+                      <button
+                      className="btn  hover:border-orange-300 border border-orange-300 btn-outline hover:bg-orange-300"
+                      >Details</button>
                     </div>
                   </div>
                 </div>

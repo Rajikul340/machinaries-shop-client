@@ -27,3 +27,11 @@
 .my-element:hover {
   transform: translate(10px, 10px) scale(1.1);
 }
+
+.arrow{
+  transform: translate(0, 0) scale(1);
+  transition: transform .4s ease;
+}
+.arrow:hover{
+  transform: translate( 2px, 0) scale(1.1);
+}

@@ -10,7 +10,7 @@ const Layout = () => {
       <div className="px-8 min-h-screen">
         <Outlet></Outlet>
       </div>
-      <div className="">
+      <div className="mx-8 ">
         <Footer></Footer>
       </div>
     </>

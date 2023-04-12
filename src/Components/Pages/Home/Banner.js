@@ -17,7 +17,7 @@ const Banner = () => {
           <p className="lg:text-3xl font-bold text-white uppercase">
             welcome to
           </p>
-          <h1 className="lg:text-6xl text-2xl font-bold uppercase text-[#F7C02D] lg:mb-3">
+          <h1 className="lg:text-6xl text-2xl font-bold uppercase text-orange-400 lg:mb-3">
             machinaries shop
           </h1>
           <p className="text-white lg:text-xl my-4">
@@ -53,7 +53,7 @@ const Banner = () => {
           <p className="lg:text-3xl font-bold text-white uppercase">
             welcome to
           </p>
-          <h1 className="lg:text-6xl text-2xl font-bold uppercase text-[#F7C02D] lg:mb-3">
+          <h1 className="lg:text-6xl text-2xl font-bold uppercase text-orange-400 lg:mb-3">
             machinaries shop
           </h1>
           <p className="text-white lg:text-xl my-4">
@@ -88,7 +88,7 @@ const Banner = () => {
           <p className="lg:text-3xl font-bold text-white uppercase">
             welcome to
           </p>
-          <h1 className="lg:text-6xl text-2xl font-bold uppercase text-[#F7C02D] lg:mb-3">
+          <h1 className="lg:text-6xl text-2xl font-bold uppercase text-orange-400 lg:mb-3">
             machinaries shop
           </h1>
           <p className="text-white lg:text-xl my-4">
