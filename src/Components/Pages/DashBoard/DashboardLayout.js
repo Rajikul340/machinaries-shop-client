@@ -4,18 +4,15 @@ import DashobarSideBar from "./DashobarSideBar";
 import { useContext, useEffect, useState } from "react";
 import { getRole } from "../../Auth/Auth";
 import { Outlet } from "react-router-dom";
-import Header from "../Header/Header";
 
 const DashboardLayout = () => {
   const { user } = useContext(UserContext);
-  console.log("das user", user?.email);
-  const [role, setRole] = useState(null);
+  const [role, setRole] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
     getRole(user?.email).then((data) => {
-      console.log("role data", data);
       setRole(data);
       setLoading(false);
     });
@@ -23,14 +20,18 @@ const DashboardLayout = () => {
 
   return (
     <div className="">
-      <>
-
-         <DashobarSideBar role={role} />
-
-        <div className="flex-1 m-5  ">
-          <Outlet></Outlet>
-        </div>
-      </>
+      {loading ? (
+        ""
+      ) : (
+        <>
+          <DashobarSideBar role={role} />
+          <div className="flex-1  md:ml-64">
+            <div className="">
+              <Outlet />
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

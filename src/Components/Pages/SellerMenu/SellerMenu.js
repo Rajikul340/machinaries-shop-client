@@ -2,10 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 
-const SellerMenu = () => {
+const SellerMenu = ({role}) => {
     return (
         <>
-        <h1 className='lg:text-2xl font-serif font-bold' >Seller Dahsobard</h1>
+        <h1 className='lg:text-2xl font-serif font-bold' >{role} Dahsobard</h1>
         <NavLink
           to='/dashboard/AddProduct'
           className={({ isActive }) =>

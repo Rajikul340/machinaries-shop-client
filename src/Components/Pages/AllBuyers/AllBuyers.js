@@ -39,7 +39,7 @@ const AllBuyers = () => {
   };
 
   return (
-    <div className="lg:mr-44 lg:ml-6">
+    <div className="">
       {isLoading ? (
         <p>Loading...</p>
       ) : (

@@ -17,6 +17,8 @@ import Payment from "../Pages/Payment/Payment";
 import Register from "../Pages/Register/Register";
 import WhistList from "../Pages/WhistLinst/WhistList";
 import PrivateRout from "../Routes/PrivateRout";
+import AdminRoute from "./AdminRoute";
+import BuyerRoute from "./BuyerRoute";
 
 export const router = createBrowserRouter([
   {
@@ -61,19 +63,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/myorder",
-        element: <BuyerOrder></BuyerOrder>,
+        element:<BuyerRoute> <BuyerOrder></BuyerOrder></BuyerRoute>,
       },
       {
         path: "/dashboard/allbuyers",
-        element: <AllBuyers></AllBuyers>,
+        element: <AdminRoute> <AllBuyers></AllBuyers></AdminRoute>,
       },
       {
         path: "/dashboard/allseller",
-        element: <AllSeller></AllSeller>,
+        element: <AdminRoute><AllSeller></AllSeller></AdminRoute>,
       },
       {
         path: "/dashboard/payment/:id",
-        element: <Payment></Payment>,
+        element:  <Payment></Payment> ,
         loader: ({ params }) =>
           fetch(
             ` http://localhost:5000/machineData/${params.id}`
@@ -93,7 +95,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/whitelist",
-        element: <WhistList></WhistList>,
+        element: <BuyerRoute><WhistList></WhistList></BuyerRoute>,
       },
     ],
   },

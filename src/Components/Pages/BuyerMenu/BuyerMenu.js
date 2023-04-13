@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 import { FingerPrintIcon, UserPlusIcon } from '@heroicons/react/24/solid'
 
 
-const BuyerMenu = () => {
+const BuyerMenu = ({role}) => {
     return (
         <>
-        <h1 className='lg:text-2xl font-serif font-bold'>Buyer dashboard</h1>
+        <h1 className='lg:text-2xl font-serif font-bold'>{role} dashboard</h1>
         <NavLink
           to='/dashboard/myorder'
           className={({ isActive }) =>

@@ -1,48 +1,40 @@
 export const getRole = async (email) => {
-  const response = await fetch(
-    ` http://localhost:5000/users/${email}`,
-    {
-      method: "GET",
-    }
-  );
+  const response = await fetch(` http://localhost:5000/users/${email}`, {
+    method: "GET",
+  });
   const user = await response.json();
+  // console.log('getrole email', user);
   return user?.role;
 };
 
 //admin request
 export const adminRequest = async (user) => {
-  const response = await fetch(
-    ` http://localhost:5000/users/${user?.email}`,
-    {
-      method: "PUT",
+  const response = await fetch(` http://localhost:5000/users/${user?.email}`, {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
       headers: {
-        "content-type": "application/json",
-        headers: {
-          authorization: `bearer ${localStorage.getItem("token")}`,
-        },
+        authorization: `bearer ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify(user),
-    }
-  );
+    },
+    body: JSON.stringify(user),
+  });
   const data = await response.json();
   console.log(data);
   return data;
 };
 
 export const addProduct = async (product) => {
-  const res = await fetch(
-    ` http://localhost:5000/AllMachine`,
-    {
-      method: "POST",
+  const res = await fetch(` http://localhost:5000/AllMachine`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
       headers: {
-        "content-type": "application/json",
-        headers: {
-          authorization: `bearer ${localStorage.getItem("token")}`,
-        },
+        authorization: `bearer ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify(product),
-    }
-  );
+    },
+    body: JSON.stringify(product),
+  });
   const data = await res.json();
 
   return data;
@@ -66,33 +58,27 @@ export const imageUpload = async (image) => {
 
 export const makeAdmin = async (user) => {
   delete user._id;
-  const response = await fetch(
-    ` http://localhost:5000/users/${user?.email}`,
-    {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-        authorization: `bearer ${localStorage.getItem("token")}`,
-      },
-      body: JSON.stringify({ ...user, role: "admin" }),
-    }
-  );
+  const response = await fetch(` http://localhost:5000/users/${user?.email}`, {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+      authorization: `bearer ${localStorage.getItem("token")}`,
+    },
+    body: JSON.stringify({ ...user, role: "admin" }),
+  });
   const users = await response.json();
 
   return users;
 };
 
 export const getAllSeller = async () => {
-  const response = await fetch(
-    ` http://localhost:5000/users`,
-    {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-        authorization: `bearer ${localStorage.getItem("token")}`,
-      },
-    }
-  );
+  const response = await fetch(` http://localhost:5000/users`, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      authorization: `bearer ${localStorage.getItem("token")}`,
+    },
+  });
   console.log("test");
   const users = await response.json();
 

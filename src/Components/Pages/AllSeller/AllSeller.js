@@ -58,7 +58,7 @@ const AllSeller = () => {
   };
   console.log("single seler", AllsellerData);
   return (
-    <div className="lg:mr-48 lg:ml-6">
+    <div className="">
       {loading ? (
         <p>Loading ..</p>
       ) : (
