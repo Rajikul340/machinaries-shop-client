@@ -26,7 +26,7 @@ const Payment = () => {
   console.log("payment route theke asa data", orderData);
 
   return (
-    <div className="border w-96 p-4 ">
+    <div className="border mx-auto mt-40 w-96 p-4 ">
       <div className="">
         <Elements stripe={stripePromise}>
           {orderData?.map((singleData) => (

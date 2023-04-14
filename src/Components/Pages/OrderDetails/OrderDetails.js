@@ -7,9 +7,9 @@ const OrderDetails = ({ singleData, handleDelete }) => {
   const { img, title, _id, resalePrice, paid } = singleData;
   return (
     <tr key={_id}>
-      <th>
+      <td>
         <img src={img} className="w-16 h-16 rounded-full" alt="" />
-      </th>
+      </td>
       <td>{title}</td>
       <td>${resalePrice}</td>
       <td>

@@ -34,14 +34,14 @@ const HelpSection = () => {
         <h5 className="md:text-2xl text-xl font-bold uppercase text-orange-400 text-center pt-20 pb-5 ">
           support team
         </h5>
-        <h1 className="md:text-7xl text-3xl font-bold text-white text-center pb-40">
+        <h1 className="md:text-7xl text-3xl font-bold text-white text-center md:pb-40">
           The help you neeed,
           <br /> contact with our team
         </h1>
       </div>
       <div className="md:grid md:grid-cols-2 gap-5 mx-4 pb-20">
         {cadInfo?.map((card) => (
-          <div className="card  " key={card.id} style={{border:"0.4px solid white"}}>
+          <div className="card md:my-0 my-8 " key={card.id} style={{border:"0.4px solid white"}}>
             <div className=" h-16  rounded-lg ml-7 mt-4 w-16  bg-gradient-to-t from-yellow-600 to-red-600">
               <p className="">{card?.icon}</p>
             </div>

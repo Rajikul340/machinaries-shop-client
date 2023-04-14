@@ -6,7 +6,7 @@ const AdminMenu = ({role}) => {
   return (
 
    
-    <>
+    <div className="z-1">
     <NavLink
        to="/dashboard/allbuyers"
       className={({ isActive }) =>
@@ -32,7 +32,7 @@ const AdminMenu = ({role}) => {
 
       <span className="mx-4 font-medium">All Sellers</span>
     </NavLink>
-  </>
+  </div>
   );
 };
 

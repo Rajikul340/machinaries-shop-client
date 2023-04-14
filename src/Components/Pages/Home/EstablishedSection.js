@@ -2,7 +2,8 @@ import React from "react";
 
 const EstablishedSection = () => {
   return (
-    <div className="bg-gradient-to-t from-yellow-600 to-red-600 h-[40vw] flex flex-col justify-center items-center">
+  <div>
+       <div className="bg-gradient-to-t from-yellow-600 to-red-600 md:h-[40vw] h-96 flex flex-col justify-center items-center">
       <h1 className="md:text-7xl text-3xl font-bold text-white mb-10 ">
         Established your <br />
         Business here
@@ -16,6 +17,7 @@ const EstablishedSection = () => {
       start free trial
             </button>
     </div>
+  </div>
   );
 };
 

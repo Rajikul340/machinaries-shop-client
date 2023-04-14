@@ -79,18 +79,18 @@ const AllSeller = () => {
             </thead>
             <tbody>
               {sellerData.map((singleData) => (
-                <tr key={singleData._id}>
-                  <th>
+                <tr key={singleData?._id}>
+                  <td>
                     <img
-                      src={singleData.img}
-                      className="w-16 h-16 rounded-full"
+                      src={singleData?.img}
+                      className="w-16 h-16 rounded-full border border-red-300 "
                       alt=""
                     />
-                  </th>
-                  <td>{singleData.name}</td>
+                  </td>
+                  <td>{singleData?.name}</td>
                   <td className="px-5 py-5 text-sm">
                     <p className="text-gray-900 whitespace-no-wrap">
-                      {singleData?.role ? singleData.role : "seller"}
+                      {singleData?.role ? singleData?.role : "seller"}
                     </p>
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">

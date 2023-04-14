@@ -2,6 +2,7 @@ import React from 'react';
 
 const AdminRequestForm = ({handleSubmit}) => {
 
+
     return (
         <>
         <div className='flex justify-center mt-6'>
@@ -15,7 +16,7 @@ const AdminRequestForm = ({handleSubmit}) => {
                   Location
                 </label>
                 <input
-                  className='w-full px-4 py-3 rounded-md'
+                  className='w-full px-4 py-3 rounded-md outline-orange-300'
                   name='location'
                   id='location'
                   type='text'

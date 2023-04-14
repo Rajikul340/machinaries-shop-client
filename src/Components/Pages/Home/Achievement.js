@@ -2,7 +2,8 @@ import React from "react";
 
 const Achievement = () => {
   return (
-    <div className="bg-black h-[50vh] md:flex items-center text-white  mt-10">
+   <div className="bg-black   mt-10">
+      <div className="md:h-[50vh] md:flex items-center text-white  ">
       <div className="card  ">
         <div className="card-body">
           <h2 className="card-title md:text-4xl text-2xl">10, 000 +</h2>
@@ -37,6 +38,7 @@ const Achievement = () => {
         </div>
       </div>
     </div>
+   </div>
   );
 };
 

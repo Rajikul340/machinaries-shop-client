@@ -2,9 +2,8 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
 
 const CheckOut = ({ singleData }) => {
-  console.log("checkout page theke data", singleData);
+  // console.log("checkout page theke data", singleData);
   const { email, buyer, resalePrice, title, _id } = singleData;
-
   const [clientSecret, setClientSecret] = useState("");
   const stripe = useStripe();
   const elements = useElements();
@@ -15,7 +14,6 @@ const CheckOut = ({ singleData }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     if (!stripe || !elements) {
       return;
     }
@@ -24,7 +22,6 @@ const CheckOut = ({ singleData }) => {
       return;
     }
     setProcces(true);
-
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card,
@@ -36,7 +33,6 @@ const CheckOut = ({ singleData }) => {
     } else {
       setCardError("");
     }
-
     const { paymentIntent, error: confirmEror } =
       await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -83,13 +79,13 @@ const CheckOut = ({ singleData }) => {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        authorization: `beare ${localStorage.getItem("token")}`,
+        authorization: `bearer ${localStorage.getItem("token")}`,
       },
       body: JSON.stringify({ resalePrice }),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("clinetsecret tak ", data);
+        console.log("clinetsecret tak ", data.clientSecret);
         setClientSecret(data?.clientSecret);
       });
   }, [resalePrice]);
@@ -99,7 +95,7 @@ const CheckOut = ({ singleData }) => {
       <h1 className="mb-2">payment for {title}</h1>
       <form onSubmit={handleSubmit}>
         <CardElement
-          className="border"
+          className=""
           options={{
             style: {
               base: {
@@ -118,7 +114,7 @@ const CheckOut = ({ singleData }) => {
         <button
           type="submit"
           className="btn btn-sm btn-outline bg-orange-400 mt-5"
-          disabled={!stripe || !clientSecret || procces}
+          // disabled={!stripe || !clientSecret || procces }
         >
           Pay
         </button>
@@ -135,3 +131,12 @@ const CheckOut = ({ singleData }) => {
 };
 
 export default CheckOut;
+
+
+
+//pk_test_51M5vrACD94rrdGa3tyD1d2jSyLuuQSdLwtzvi17T3VaWbKLjsx41yRoA2ggrCPxuwi803Cj86KatR6qZvBXeke1V00bpQiG17l
+
+//sk_test_51M5vrACD94rrdGa3Y9TF8e9ZVVLsKDDiO5B1rEyPSwWn6MS6MMWcgPNcWo2atVfPNfXTceh9aV9oNKcVK0LU6tNY00hKjFkWl1
+
+
+

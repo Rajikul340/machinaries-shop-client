@@ -5,7 +5,7 @@ const BuyerDetails = ({buyerDetails,  handleDelete}) => {
     const{_id, name, img, role, email, } = buyerDetails;
     return (
         <tr key={_id}>
-        <th><img src={img} className='w-16 h-16 rounded-full' alt="" /></th>
+        <td><img src={img} className='w-16 h-16 rounded-full' alt="" /></td>
         <td>{name}</td>
         <td>{email}</td>
         <td>{role}</td>
