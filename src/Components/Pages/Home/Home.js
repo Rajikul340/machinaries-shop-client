@@ -7,6 +7,7 @@ import HelpSection from "./HelpSection";
 import EstublishSection from "./EstablishedSection";
 import Achievement from "./Achievement";
 import FaqSection from "./FaqSection";
+import Success from "./Success";
 
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
         <Achievement/>
         <HelpSection/>
         <EstublishSection/>
+        <Success/>
         <FaqSection/>
       
       </div>
