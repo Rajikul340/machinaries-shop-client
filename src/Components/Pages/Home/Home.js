@@ -6,6 +6,8 @@ import CategorySection from "./CategorySection";
 import HelpSection from "./HelpSection";
 import EstublishSection from "./EstablishedSection";
 import Achievement from "./Achievement";
+import FaqSection from "./FaqSection";
+
 
 const Home = () => {
   return (
@@ -19,6 +21,8 @@ const Home = () => {
         <Achievement/>
         <HelpSection/>
         <EstublishSection/>
+        <FaqSection/>
+      
       </div>
     </div>
   );
