@@ -9,7 +9,8 @@ const AdminRequest = () => {
   const { user } = useContext(UserContext);
   const [role, setRole] = useState("");
   // console.log("role to", role);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     setLoading(true);
     getRole(user?.email)
@@ -29,6 +30,7 @@ const AdminRequest = () => {
 
     // Upload ID image
 
+     setLoading(true)
     imageUpload(image)
       .then((result) => {
         const hostData = {
@@ -43,6 +45,7 @@ const AdminRequest = () => {
           .catch((err) => console.log(err));
 
         // setRole("requested");
+        setLoading(false)
       })
       .catch((err) => console.log(err));
 
@@ -50,7 +53,7 @@ const AdminRequest = () => {
   };
   return (
     <>
-      <AdminRequestForm handleSubmit={handleSubmit} />
+      <AdminRequestForm loading={loading} handleSubmit={handleSubmit} />
     </>
   );
 };

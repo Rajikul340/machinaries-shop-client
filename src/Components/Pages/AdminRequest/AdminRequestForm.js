@@ -1,6 +1,7 @@
 import React from 'react';
+import Spinner from '../../Spinner/Spinner';
 
-const AdminRequestForm = ({handleSubmit}) => {
+const AdminRequestForm = ({handleSubmit, loading}) => {
 
 
     return (
@@ -55,7 +56,9 @@ const AdminRequestForm = ({handleSubmit}) => {
                 type='submit'
                 className='block w-full p-3 text-center font-medium bg-orange-300 '
               >
-                Submit Request
+               {
+                loading ? <Spinner /> : "  Submit Request"
+               }
               </button>
             </form>
           </div>

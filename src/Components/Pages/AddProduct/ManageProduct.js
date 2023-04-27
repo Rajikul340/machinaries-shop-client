@@ -22,7 +22,7 @@ const ManageProduct = () => {
       return data;
     },
   });
-  const sellerDataByEmail = sellerData.filter(
+  const sellerDataByEmail = sellerData?.filter(
     (singleData) => singleData?.sellerInfo?.sellerMail === user?.email
   );
   const handleDelete = (id) => {
@@ -41,9 +41,25 @@ const ManageProduct = () => {
     }
   };
 
-  const handleAdvertise = (id) => {
-    console.log(id);
-  };
+
+
+    const handleAdvertise = id => {
+      const isAva = {
+          type: 'publish'
+      }
+      fetch(`http://localhost:5000/AllMachine/publish/${id}`, {
+          method: 'PUT',
+          headers: {
+              'content-type': 'application/json'
+          },
+          body: JSON.stringify(isAva)
+      }).then(rs => {
+          refetch()
+          toast.loading("comming soon")
+      })
+          .catch(err => console.log(err))
+  }
+
 
   return (
     <div className="">

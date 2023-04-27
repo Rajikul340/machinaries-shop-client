@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { toast } from "react-toastify";
 import { UserContext } from "../../AuthProvider/AuthProvider";
+import Spinner from "../../Spinner/Spinner";
 
 const Register = () => {
   const { createUser, handleUpdate } = useContext(UserContext);
@@ -155,7 +156,9 @@ const Register = () => {
               type="submit"
               className=" btn btn-outline border-orange-300 hover:bg-orange-300 hover:border-0 font-bold  mt-5"
             >
-              Register
+              {
+                loader ? <Spinner /> : "Register"
+              }
             </button>
           </div>
 

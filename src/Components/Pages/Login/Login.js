@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserContext} from "../../AuthProvider/AuthProvider";
+import Spinner from "../../Spinner/Spinner";
 
 
 
@@ -92,7 +93,9 @@ const Login = () => {
             type="submit"
             className=" btn btn-outline border-orange-300 hover:bg-orange-300 hover:border-0 font-bold  mt-5"
           >
-            Login
+           {
+            loader ? <Spinner/> : "Login"
+           }
           </button>
         </div>
 

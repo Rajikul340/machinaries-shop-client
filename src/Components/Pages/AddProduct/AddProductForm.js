@@ -1,10 +1,12 @@
 import React from 'react';
+import Spinner from '../../Spinner/Spinner';
 
 const AddProductForm = ({ 
     handleSubmit, 
     handleImageChange,
     preview,
     uploadButtonText,
+    loading
 }) => {
 
     return (
@@ -124,9 +126,11 @@ const AddProductForm = ({
 
             <button
               type='submit'
-              className='block w-full p-3 text-center font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-gradient-to-r from-orange-500 to-orange-300 hover:bg-gray-200 hover:text-gray-700 focus:shadow-outline focus:outline-none'
+              className='block w-full p-3  text-center font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-gradient-to-r from-orange-500 to-orange-300 hover:bg-gray-200 hover:text-gray-700 focus:shadow-outline focus:outline-none'
             >
-               Save & continue
+               {
+                loading ? <Spinner/> : "save"
+               }
             </button>
           </form>
         </div>
