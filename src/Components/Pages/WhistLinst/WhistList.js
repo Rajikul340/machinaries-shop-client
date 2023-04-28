@@ -17,7 +17,7 @@ const WhistList = () => {
     queryKey: ["AllMachine"],
     queryFn: async () => {
       const res = await fetch(
-        ` http://localhost:5000/AllMachine`
+        ` https://machinaries-shop-server.vercel.app/AllMachine`
       );
       const data = await res.json();
       return data;

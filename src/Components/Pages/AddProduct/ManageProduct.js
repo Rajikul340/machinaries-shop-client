@@ -16,7 +16,7 @@ const ManageProduct = () => {
     queryKey: ["AllMachine"],
     queryFn: async () => {
       const res = await fetch(
-        ` http://localhost:5000/AllMachine`
+        ` https://machinaries-shop-server.vercel.app/AllMachine`
       );
       const data = await res.json();
       return data;
@@ -28,7 +28,7 @@ const ManageProduct = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want delete");
     if (proceed) {
-      fetch(` http://localhost:5000/AllMachine/${id}`, {
+      fetch(` https://machinaries-shop-server.vercel.app/AllMachine/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -47,7 +47,7 @@ const ManageProduct = () => {
       const isAva = {
           type: 'publish'
       }
-      fetch(`http://localhost:5000/AllMachine/publish/${id}`, {
+      fetch(`https://machinaries-shop-server.vercel.app/AllMachine/publish/${id}`, {
           method: 'PUT',
           headers: {
               'content-type': 'application/json'

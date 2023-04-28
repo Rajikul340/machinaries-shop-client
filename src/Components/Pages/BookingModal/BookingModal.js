@@ -33,7 +33,7 @@ const BookingModal = ({ bookingData, setBookingData }) => {
       Status: "booking",
     };
 
-    fetch(" http://localhost:5000/AllMachine", {
+    fetch(" https://machinaries-shop-server.vercel.app/AllMachine", {
       method: "POST",
       headers: {
         "content-type": "application/json",

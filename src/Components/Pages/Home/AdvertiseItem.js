@@ -17,7 +17,7 @@ const AdvertiseItem = () => {
     queryKey: ["AllMachine"],
     queryFn: async () => {
       const res = await fetch();
-      // ` http://localhost:5000/AllMachine`
+      // ` https://machinaries-shop-server.vercel.app/AllMachine`
       const data = await res.json();
       return data;
     },
@@ -26,7 +26,7 @@ const AdvertiseItem = () => {
     (adverData) => adverData?.sellerInfo?.sellerMail === user?.email
   );
 
-  const url = `http://localhost:5000/advertises?available=available&&type=publish`;
+  const url = `https://machinaries-shop-server.vercel.app/advertises?available=available&&type=publish`;
 
   const { data: adsData = [] } = useQuery({
       queryKey: ['ad'],

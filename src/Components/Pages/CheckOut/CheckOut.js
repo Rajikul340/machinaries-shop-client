@@ -57,7 +57,7 @@ import React, { useEffect, useState } from "react";
 //       bookingId: _id,
 //     };
 
-//     fetch(" http://localhost:5000/payment", {
+//     fetch(" https://machinaries-shop-server.vercel.app/payment", {
 //       method: "PUT",
 //       headers: {
 //         "content-type": "application/json",
@@ -75,7 +75,7 @@ import React, { useEffect, useState } from "react";
 //   };
 
 //   useEffect(() => {
-//     fetch(" http://localhost:5000/create-payment-intent", {
+//     fetch(" https://machinaries-shop-server.vercel.app/create-payment-intent", {
 //       method: "POST",
 //       headers: {
 //         "content-type": "application/json",
@@ -152,7 +152,7 @@ const elements = useElements();
 const [cardError, setCardError] = useState("");
 const [success, setSuccess] = useState("");
 const [transactionId, setTransactionId] = useState("");
-const [procces, setProcces] = useState(false);
+const [process, setProcess] = useState(false);
 
 
 
@@ -166,7 +166,7 @@ const handleSubmit = async (event) => {
     if (card === null) {
       return;
     }
-    setProcces(true);
+    setProcess(true);
 
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
@@ -196,14 +196,14 @@ const handleSubmit = async (event) => {
     }
     if (paymentIntent.status === "succeeded") {
     }
-    setProcces(false);
+    setProcess(false);
     const payment = {
         resalePrice,
       email,
       transactionId: paymentIntent.id,
     };
 
-    fetch("http://localhost:5000/payment", {
+    fetch("https://machinaries-shop-server.vercel.app/payment", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -220,7 +220,7 @@ const handleSubmit = async (event) => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/payment-intents", {
+    fetch("https://machinaries-shop-server.vercel.app/payment-intents", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -259,7 +259,8 @@ const handleSubmit = async (event) => {
       <button
         type="submit"
         className="btn btn-sm btn-outline bg-orange-400 mt-5"
-        disabled={!stripe || !clientSecret || procces}
+        // disabled={!stripe || !clientSecret || process}
+        disabled={process}
       >
         Pay
       </button>
