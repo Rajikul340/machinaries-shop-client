@@ -124,8 +124,8 @@ const CheckOut = ({ singleData }) => {
         <button
           type="submit"
           className="btn btn-sm btn-outline bg-orange-400 mt-5"
-          // disabled={!stripe || !clientSecret || process}
-          // disabled={process}
+          disabled={!stripe || !clientSecret || process}
+        
         >
           Pay
         </button>

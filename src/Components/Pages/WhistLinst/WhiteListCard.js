@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../AuthProvider/AuthProvider';
 
-const WhiteListCard = ({singleData, setBookingData}) => {
+const WhiteListCard = ({singleData, setBookingData, handleDelete}) => {
     const { user } = useContext(UserContext);
-    console.log(user);
+    console.log('user white list email',user?.email);
 
     const {
       img,
       title,
       _id,
+      buyerEmail,
       location,
       uses,
       seller,
@@ -56,6 +57,10 @@ const WhiteListCard = ({singleData, setBookingData}) => {
             </div>
           </div>
           <div className="card-actions justify-end">
+             <button 
+             onClick={()=>handleDelete(singleData)}
+              className="btn hove:border-none border-orange-300 btn-outline hover:bg-orange-300"
+             >Delete </button>
             <label
               htmlFor="whitelist-modal"
               onClick={()=>setBookingData(singleData)}
