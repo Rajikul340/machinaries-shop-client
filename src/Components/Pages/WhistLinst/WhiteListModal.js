@@ -32,7 +32,7 @@ const WhiteListModal = ({ setBookingData, bookingData }) => {
       Status: "booking",
     };
 
-    fetch(" https://machinaries-shop-server.vercel.app/AllMachine", {
+    fetch(" http://localhost:5000/AllMachine", {
       method: "POST",
       headers: {
         "content-type": "application/json",

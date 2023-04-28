@@ -1,5 +1,5 @@
 export const getRole = async (email) => {
-  const response = await fetch(` https://machinaries-shop-server.vercel.app/users/${email}`, {
+  const response = await fetch(` http://localhost:5000/users/${email}`, {
     method: "GET",
   });
   const user = await response.json();
@@ -9,7 +9,7 @@ export const getRole = async (email) => {
 
 //admin request
 export const adminRequest = async (user) => {
-  const response = await fetch(` https://machinaries-shop-server.vercel.app/users/${user?.email}`, {
+  const response = await fetch(` http://localhost:5000/users/${user?.email}`, {
     method: "PUT",
     headers: {
       "content-type": "application/json",
@@ -25,7 +25,7 @@ export const adminRequest = async (user) => {
 };
 
 export const addProduct = async (product) => {
-  const res = await fetch(` https://machinaries-shop-server.vercel.app/AllMachine`, {
+  const res = await fetch(` http://localhost:5000/AllMachine`, {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -58,7 +58,7 @@ export const imageUpload = async (image) => {
 
 export const makeAdmin = async (user) => {
   delete user._id;
-  const response = await fetch(` https://machinaries-shop-server.vercel.app/users/${user?.email}`, {
+  const response = await fetch(` http://localhost:5000/users/${user?.email}`, {
     method: "PUT",
     headers: {
       "content-type": "application/json",
@@ -72,7 +72,7 @@ export const makeAdmin = async (user) => {
 };
 
 export const getAllSeller = async () => {
-  const response = await fetch(` https://machinaries-shop-server.vercel.app/users`, {
+  const response = await fetch(` http://localhost:5000/users`, {
     method: "GET",
     headers: {
       "content-type": "application/json",

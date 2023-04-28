@@ -17,7 +17,7 @@
 //   } = useQuery({
 //     queryKey: [`AllMachine/:id`],
 //     queryFn: async ({params}) => {
-//       const res = await fetch(` https://machinaries-shop-server.vercel.app/AllMachine/${params.id}`);
+//       const res = await fetch(` http://localhost:5000/AllMachine/${params.id}`);
 //       const data = await res.json();
 //       return data;
 //     },

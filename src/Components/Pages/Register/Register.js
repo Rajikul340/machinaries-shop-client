@@ -33,7 +33,7 @@ const Register = () => {
       img: photoURL,
       role: selectedValue,
     };
-    fetch(" https://machinaries-shop-server.vercel.app/users", {
+    fetch(" http://localhost:5000/users", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
