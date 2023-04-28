@@ -58,11 +58,11 @@ const Login = () => {
         form.reset();
       });
   };
-  const content = loader && <p>loading..</p>;
+  // const content = loader && <p>loading..</p>;
 
   return (
     <div>
-      {error ? <p className="text-center text-red-600">{error}</p> : content}
+      {error ? <p className="text-center text-red-600">{error}</p> : ""}
       <div className="mx-auto lg:w-5/12 mb-4 border mt-7">
         <h3 className="text-center lg:text-3xl font-bold capitalize font-serif text-orange-300">
           Please LogIn

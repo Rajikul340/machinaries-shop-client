@@ -8,16 +8,16 @@ const Success = () => {
           read success stories
         </h1>
         <div className="flex my-5 justify-between">
-          <p className="capitalize  text-lg">
+          <p className="capitalize  md:text-lg">
             read how buyers and sellers have found success on machinaries
             platform
           </p>
-          <p className="text-blue-500 hover:border-b-2 text-lg  ">see more </p>
+          <p className="text-blue-500 hover:border-b-2 md:text-lg  ">see more </p>
         </div>
       </div>
 
       <div className="md:grid md:grid-cols-3 gap-5">
-        <div className="  max-w-md bg-base-100 shadow-xl">
+        <div className="  max-w-md bg-base-100 shadow-xl my-5">
           <figure>
             <img
               src="https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
@@ -36,7 +36,7 @@ const Success = () => {
             </p>
           </div>
         </div>
-        <div className="  max-w-md bg-base-100 shadow-xl">
+        <div className=" my-5 max-w-md bg-base-100 shadow-xl">
           <figure>
             <img
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
@@ -54,7 +54,7 @@ const Success = () => {
             </p>
           </div>
         </div>
-        <div className="  max-w-md bg-base-100 shadow-xl">
+        <div className=" my-5 max-w-md bg-base-100 shadow-xl">
           <figure>
             <img
               src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"

@@ -18,7 +18,7 @@ const BuyerRoute = ({ children }) => {
   }, [user])
 
   if (loading || roleLoading) {
-    return <p>Loading.......b</p>
+    return <p>Loading.......</p>
   }
 
   if (user && user.uid && role === 'buyer') {

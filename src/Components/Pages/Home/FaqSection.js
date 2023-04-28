@@ -3,7 +3,7 @@ import React from "react";
 const FaqSection = () => {
   return (
     <div className="my-10">
-      <h2 className="text-orange-400 md:text-4xl text-lg text-center mb-10">
+      <h2 className="text-orange-400 md:text-4xl text-2xl text-center mb-10">
         Frequently asked question
       </h2>
 
