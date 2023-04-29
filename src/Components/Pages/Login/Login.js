@@ -68,6 +68,12 @@ const Login = () => {
           Please LogIn
         </h3>
 
+         <div className="text-center">
+           <p> buyer email: <strong>buyer@gmail.com  </strong>   password: <strong>123456</strong></p>
+           <p> seller email:<strong> seller@gmail.com</strong>   password: <strong>123456</strong></p>
+           <p> admin email: <strong> admin@gmail.com </strong>   password: <strong>123456</strong></p>
+         </div>
+
         <form className=" p-4 " onSubmit={handleLogin}>
           <label htmlFor="name">Email</label>
           <br />
