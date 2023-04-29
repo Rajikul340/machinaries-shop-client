@@ -7,7 +7,7 @@ const CategorySection = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch(" http://localhost:5000/machine_category")
+    fetch(" https://machinaries-shop-server.vercel.app/machine_category")
       .then((res) => res.json())
       .then((data) => {
         console.log("category data ", data);

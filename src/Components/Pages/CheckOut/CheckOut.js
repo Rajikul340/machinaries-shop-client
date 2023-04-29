@@ -64,7 +64,7 @@ const CheckOut = ({ singleData }) => {
       transactionId: paymentIntent.id,
     };
 
-    fetch("http://localhost:5000/payment", {
+    fetch("https://machinaries-shop-server.vercel.app/payment", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -81,7 +81,7 @@ const CheckOut = ({ singleData }) => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://machinaries-shop-server.vercel.app/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",

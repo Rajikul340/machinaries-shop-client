@@ -34,7 +34,7 @@ const SingleCard = ({ machineData, setBookingData }) => {
       resalePrice,
     };
 
-    fetch("http://localhost:5000/whitelist", {
+    fetch("https://machinaries-shop-server.vercel.app/whitelist", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -16,7 +16,7 @@ const WhistList = () => {
   } = useQuery({
     queryKey: ["whitelist"],
     queryFn: async () => {
-      const res = await fetch(` http://localhost:5000/whitelist`);
+      const res = await fetch(` https://machinaries-shop-server.vercel.app/whitelist`);
       const data = await res.json();
       return data;
     },
@@ -28,7 +28,7 @@ const WhistList = () => {
     console.log("id", data);
     const proceed = window.confirm("Are you sure, you want delete");
     if (proceed) {
-      fetch(` http://localhost:5000/whitelist/${data?._id}`, {
+      fetch(` https://machinaries-shop-server.vercel.app/whitelist/${data?._id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
