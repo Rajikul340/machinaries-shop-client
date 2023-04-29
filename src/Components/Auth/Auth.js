@@ -20,9 +20,11 @@ export const adminRequest = async (user) => {
     body: JSON.stringify(user),
   });
   const data = await response.json();
-  console.log(data);
+  console.log('admin request',data);
   return data;
 };
+
+
 
 export const addProduct = async (product) => {
   const res = await fetch(` http://localhost:5000/AllMachine`, {
@@ -58,7 +60,8 @@ export const imageUpload = async (image) => {
 
 export const makeAdmin = async (user) => {
   delete user._id;
-  const response = await fetch(` http://localhost:5000/users/${user?.email}`, {
+  const response = await fetch(` http://localhost:5000/users/${user?.email}`,
+   {
     method: "PUT",
     headers: {
       "content-type": "application/json",
@@ -67,7 +70,6 @@ export const makeAdmin = async (user) => {
     body: JSON.stringify({ ...user, role: "admin" }),
   });
   const users = await response.json();
-
   return users;
 };
 

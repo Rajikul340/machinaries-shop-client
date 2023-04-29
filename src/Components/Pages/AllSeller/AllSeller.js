@@ -1,10 +1,9 @@
 import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
-import SellerDetails from "../SellerDetails/SellerDetails";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { adminRequest, getAllSeller } from "../../Auth/Auth";
+import { getAllSeller, makeAdmin } from "../../Auth/Auth";
 
 const AllSeller = () => {
   const [sellerData, setSellerData] = useState([]);
@@ -44,8 +43,9 @@ const AllSeller = () => {
   };
 
   const handleRequest = (user) => {
-    adminRequest(user).then((data) => {
-      console.log(data);
+    makeAdmin(user)
+    .then((data) => {
+      console.log("make admin data",data);
       getUsers();
     });
   };
@@ -96,7 +96,7 @@ const AllSeller = () => {
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                     {singleData?.role && singleData.role === "requested" && (
                       <span
-                        onClick={() => handleRequest(sellerData)}
+                        onClick={() => handleRequest(singleData)}
                         className="relative cursor-pointer inline-block px-3 py-1 font-semibold text-green-900 leading-tight"
                       >
                         <span aria-hidden="true" className="absolute "></span>

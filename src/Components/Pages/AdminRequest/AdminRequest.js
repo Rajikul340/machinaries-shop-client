@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 const AdminRequest = () => {
 
   const { user } = useContext(UserContext);
+  // console.log('user email', user.email);
   const [role, setRole] = useState("");
   // console.log("role to", role);
   const [loading, setLoading] = useState(false);
@@ -23,7 +24,7 @@ const AdminRequest = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('event', event);
+    // console.log('event', event.target);
     const location = event.target.location.value;
     // Image Upload
     const image = event.target.image.files[0];
@@ -36,7 +37,7 @@ const AdminRequest = () => {
         const hostData = {
           email: user?.email,
           location: location,
-          documentImg: result.data.display_url,
+          documentImg: result?.data.display_url,
           role: "requested",
         };
         // Send request do server

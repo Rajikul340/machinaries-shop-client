@@ -7,7 +7,6 @@ const ErrorPage = () => {
       <p className="text-9xl font-bold mb-3">404</p>
       <h4 className="text-3xl capitalize font-semibold mb-3">page not found</h4>
       <Link to="/">
-        >{" "}
         <button className="capitalize btn btn-info text-2xl ">
           back to home
         </button>

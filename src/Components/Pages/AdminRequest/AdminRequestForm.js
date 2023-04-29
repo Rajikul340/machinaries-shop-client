@@ -4,6 +4,8 @@ import Spinner from '../../Spinner/Spinner';
 const AdminRequestForm = ({handleSubmit, loading}) => {
 
 
+
+  // if(loading) return <p>Loading...</p>
     return (
         <>
         <div className='flex justify-center mt-6'>

@@ -19,8 +19,9 @@ const Category = () => {
         <p>loading...</p>
       ) : (
         allMechineData &&
-        allMechineData.map((machineData) => (
+        allMechineData?.map((machineData) => (
           <SingleCard
+          key={machineData?._id}
             machineData={machineData}
             setBookingData={setBookingData}
           ></SingleCard>
