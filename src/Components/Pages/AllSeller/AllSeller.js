@@ -7,7 +7,7 @@ import { getAllSeller, makeAdmin } from "../../Auth/Auth";
 
 const AllSeller = () => {
   const [sellerData, setSellerData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
 
@@ -43,12 +43,14 @@ const AllSeller = () => {
   };
 
   const handleRequest = (user) => {
+    setLoading(true)
     makeAdmin(user)
     .then((data) => {
       console.log("make admin data",data);
       getUsers();
       toast.success("requested accepted")
     });
+    setLoading(false)
   };
   const getUsers = () => {
     setLoading(true);
