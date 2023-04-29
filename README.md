@@ -2,8 +2,8 @@
 ###### live Site (https://machinaries-shop.web.app/)
 
 #### Feature Of My Project 
-* Find All categories of Industrial Re uses Machine
-* Buying Machine with Low price
-* EveryOne have Create Buyer Or seller Account
-* Delevari with Free
-* get chaina and japanies machine
+* buyer seller and admin dashboard
+* stripe payment system added 
+* product added to white list page
+*  admin can delete buyer or seller
+* seller can admin request to the admin 
