@@ -3,7 +3,7 @@ import img from '../../../image/machine.avif'
 
 const AboutProducts = () => {
   return (
-    <div className="hero bg-base-200">
+    <div className="hero bg-base-200 my-20 ">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <img src={img} className="md:max-w-sm rounded-lg shadow-2xl" alt="machine" />
     <div>
