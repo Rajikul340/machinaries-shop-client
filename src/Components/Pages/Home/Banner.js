@@ -6,11 +6,12 @@ import "../../Style/Style.css";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
+
   return (
-    <div className="carousel w-full">
+    <div className="carousel w-full " >
       <div id="slide1" className="carousel-item relative w-full">
         <div className="carousel-img">
-          <img src={banner1} className="w-full" alt="" />
+          <img src={banner2} className="" style={{ height:"600px"}} alt="" />
         </div>
 
         <div className="absolute transform -translate-y-1/2 left-24 top-2/4">
@@ -47,7 +48,7 @@ const Banner = () => {
       </div>
       <div id="slide2" className="carousel-item relative w-full">
         <div className="carousel-img">
-          <img src={banner3} className="w-full" alt="" />
+          <img src={banner3} className="w-full" alt=""  style={{ height:"600px"}}  />
         </div>
         <div className="absolute transform -translate-y-1/2 left-24 top-2/4">
           <p className="lg:text-3xl font-bold text-white uppercase">
@@ -82,7 +83,7 @@ const Banner = () => {
       </div>
       <div id="slide3" className="carousel-item relative w-full">
         <div className="carousel-img">
-          <img src={banner1} alt="" className="w-full" />
+          <img src={banner1} alt="" className="w-full"  style={{ height:"600px"}} />
         </div>
         <div className="absolute transform -translate-y-1/2 left-24 top-2/4">
           <p className="lg:text-3xl font-bold text-white uppercase">
