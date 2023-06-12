@@ -6,7 +6,18 @@ body {
   font-family: sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+.swiper-slide{
+ 
+  width: 600px;
+}
+#cardHover{
+  
+
+}
+
+.sellbackground{
+  
+  background: linear-gradient(to left,  #151515 0%,rgba(21, 21, 21, 0) 100%); /* W3C */
 }
